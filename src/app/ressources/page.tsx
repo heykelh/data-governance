@@ -8,7 +8,7 @@ const resources = [
       { title: "Registre des traitements Art. 30", format: "Excel", desc: "Template pré-rempli pour le secteur retail — 20 lignes réalistes prêtes à adapter.", size: "24 Ko" },
       { title: "Template DPIA / PIA", format: "Word", desc: "Analyse d'impact sur la vie privée — structure complète conforme CNIL.", size: "18 Ko" },
       { title: "Procédure violation de données", format: "Word", desc: "Modèle de procédure de notification CNIL en 72h.", size: "12 Ko" },
-      { title: "Questionnaire diagnostic RGPD", format: "PDF", desc: "30 questions pour auto-évaluer sa conformité — version imprimable.", size: "8 Ko" },
+      { title: "Questionnaire diagnostic RGPD", format: "PDF", desc: "30 questions pour auto-évaluer sa conformité RGPD — version imprimable.", size: "8 Ko" },
     ],
   },
   {
@@ -52,7 +52,7 @@ export default function RessourcesPage() {
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: 16, maxWidth: 600, lineHeight: 1.7 }}>
             Tous les modèles construits dans le cadre de ces projets. Directement opérationnels —
-            à adapter à votre contexte. Partagez, utilisez, améliorez.
+            à adapter à votre contexte.
           </p>
         </div>
       </section>
@@ -68,8 +68,7 @@ export default function RessourcesPage() {
               {cat.items.map(item => (
                 <div key={item.title} style={{
                   background: "var(--bg-card)", border: "1px solid var(--border)",
-                  borderRadius: 12, padding: "20px",
-                  display: "flex", flexDirection: "column", gap: 10,
+                  borderRadius: 12, padding: "20px", display: "flex", flexDirection: "column", gap: 10,
                 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                     <h3 style={{ fontSize: 14, fontWeight: 600, color: "var(--text-primary)", flex: 1, paddingRight: 10 }}>{item.title}</h3>
@@ -88,7 +87,7 @@ export default function RessourcesPage() {
                       border: `1px solid color-mix(in srgb, ${cat.color} 30%, transparent)`,
                       color: cat.color,
                     }}
-                    onClick={() => alert("Les fichiers seront disponibles au lancement du site complet.")}>
+                    onClick={() => alert("Fichiers disponibles au lancement complet du site.")}>
                       Télécharger
                     </button>
                   </div>
@@ -98,17 +97,12 @@ export default function RessourcesPage() {
           </div>
         ))}
 
-        {/* LinkedIn CTA */}
         <div style={{
           background: "var(--bg-card)", border: "1px solid var(--border)",
           borderRadius: 16, padding: "32px 36px", textAlign: "center",
         }}>
-          <p style={{ fontSize: 13, color: "var(--text-tertiary)", marginBottom: 8 }}>Vous en voulez plus ?</p>
-          <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 10 }}>Suivez les publications LinkedIn</h3>
-          <p style={{ color: "var(--text-secondary)", fontSize: 14, maxWidth: 460, margin: "0 auto 20px", lineHeight: 1.65 }}>
-            Chaque template est accompagné d'un post explicatif. Cas d'usage réels, erreurs à éviter, bonnes pratiques.
-          </p>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" style={{
+          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>Suivre sur LinkedIn</h3>
+          <a href="https://linkedin.com/in/heykelhachiche" target="_blank" rel="noreferrer" style={{
             display: "inline-flex", alignItems: "center", gap: 8,
             padding: "10px 22px", borderRadius: 8, fontSize: 13, fontWeight: 500,
             background: "var(--accent-dim)", border: "1px solid var(--accent-border)",

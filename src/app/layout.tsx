@@ -4,12 +4,15 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Michel Dupont — Data Governance & AI Compliance",
+  title: "Heykel Hachiche — Data Governance & AI Compliance",
   description: "Expert Data Governance, IA Gouvernance, RGPD et Audit. 5 projets opérationnels démontrés sur des cas réels.",
   keywords: ["Data Governance", "AI Act", "RGPD", "DPO", "Data Steward", "BCBS239", "Solvency II"],
-  authors: [{ name: "Michel Dupont" }],
+  authors: [{ name: "Heykel Hachiche" }],
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
-    title: "Michel Dupont — Data Governance & AI Compliance",
+    title: "Heykel Hachiche — Data Governance & AI Compliance",
     description: "De la donnée brute à la décision fiable. 5 expertises démontrées.",
     type: "website",
   },

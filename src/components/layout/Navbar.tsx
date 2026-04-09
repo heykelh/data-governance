@@ -14,6 +14,7 @@ const modules = [
 const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/a-propos", label: "À propos" },
+  { href: "/projets", label: "Autres projets" },
   { href: "/ressources", label: "Ressources" },
   { href: "/contact", label: "Contact" },
 ];
@@ -40,22 +41,20 @@ export function Navbar() {
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
-        {/* Logo */}
         <Link href="/" style={{ textDecoration: "none" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <div style={{
               width: 32, height: 32, borderRadius: 8,
               background: "var(--accent-dim)", border: "1px solid var(--accent-border)",
               display: "flex", alignItems: "center", justifyContent: "center",
-              fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, color: "var(--accent)"
-            }}>MD</div>
+              fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, color: "var(--accent)"
+            }}>HH</div>
             <span style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 15, color: "var(--text-primary)" }}>
-              Michel Dupont
+              Heykel Hachiche
             </span>
           </div>
         </Link>
 
-        {/* Desktop nav */}
         <div style={{ display: "flex", alignItems: "center", gap: 4 }} className="hidden-mobile">
           {navLinks.map(l => (
             <Link key={l.href} href={l.href} style={{
@@ -66,16 +65,15 @@ export function Navbar() {
             }}>{l.label}</Link>
           ))}
 
-          {/* Modules dropdown */}
           <div style={{ position: "relative" }}
             onMouseEnter={() => setModulesOpen(true)}
             onMouseLeave={() => setModulesOpen(false)}>
             <button style={{
               padding: "6px 14px", borderRadius: 8, fontSize: 14, cursor: "pointer",
               color: "var(--text-secondary)", background: "transparent", border: "none",
-              display: "flex", alignItems: "center", gap: 6, transition: "color 0.15s",
+              display: "flex", alignItems: "center", gap: 6,
             }}>
-              Projets
+              Projets Gov.
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
               </svg>
@@ -92,10 +90,7 @@ export function Navbar() {
                   <Link key={m.href} href={m.href} style={{
                     display: "flex", alignItems: "center", gap: 10,
                     padding: "8px 10px", borderRadius: 8, textDecoration: "none",
-                    transition: "background 0.15s",
-                  }}
-                  className="nav-dd-item"
-                  >
+                  }}>
                     <span style={{
                       width: 24, height: 24, borderRadius: 6,
                       background: `color-mix(in srgb, ${m.color} 15%, transparent)`,
@@ -111,14 +106,12 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* CTA */}
         <Link href="/contact" className="hidden-mobile" style={{
           padding: "8px 18px", borderRadius: 8, fontSize: 13, fontWeight: 500,
           background: "var(--accent-dim)", border: "1px solid var(--accent-border)",
-          color: "var(--accent)", textDecoration: "none", transition: "all 0.15s",
+          color: "var(--accent)", textDecoration: "none",
         }}>Me contacter</Link>
 
-        {/* Mobile burger */}
         <button onClick={() => setMenuOpen(!menuOpen)} style={{
           background: "none", border: "none", cursor: "pointer", padding: 8,
           color: "var(--text-primary)",
@@ -132,7 +125,6 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div style={{
           background: "var(--bg-surface)", borderTop: "1px solid var(--border)",

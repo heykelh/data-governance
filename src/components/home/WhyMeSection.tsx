@@ -9,7 +9,7 @@ const strengths = [
   {
     icon: "⬡",
     title: "Terrain SNCF, enjeux réels",
-    text: "10 ans dans des environnements critiques à haute exigence de sécurité et fiabilité. La gouvernance des données, je la comprends depuis les contraintes opérationnelles, pas depuis un slide.",
+    text: "12 ans dans des environnements critiques à haute exigence de sécurité et fiabilité. La gouvernance des données, je la comprends depuis les contraintes opérationnelles, pas depuis un slide.",
     color: "var(--accent-amber)",
   },
   {
@@ -34,16 +34,14 @@ export function WhyMeSection() {
 
           <div>
             <p style={{ fontSize: 11, fontWeight: 600, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 12 }}>
-              Pourquoi moi
+              Expertise Data
             </p>
             <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 700, lineHeight: 1.15, marginBottom: 24 }}>
-              Pas un candidat de plus.{" "}
-              <span style={{ color: "var(--text-secondary)" }}>Une évidence.</span>
+              Des projets, du concret.{" "}
+              <span style={{ color: "var(--text-secondary)" }}>Et une expertise.</span>
             </h2>
             <p style={{ color: "var(--text-secondary)", fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
-              Je ne postule pas à des offres. Je démontre mon niveau avant même l'entretien.
-              Ce site est ma preuve de compétence — chaque module est un projet réel,
-              déployé, documenté, prêt à être mis en production.
+              Ce site regroupe ce que j'ai construit, exploré et documenté autour de la Data Gouvernance ainsi que d'autres projets en Data/IA de façon générale.
             </p>
             <a href="/a-propos" style={{
               display: "inline-flex", alignItems: "center", gap: 8,
