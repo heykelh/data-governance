@@ -1,6 +1,26 @@
 "use client";
+import Link from "next/link";
 
 const projects = [
+  /*{
+    title: "KYC Digital Transformation — Business Analysis",
+    period: "Avr 2026",
+    tags: ["Business Analysis", "KYC / LCB-FT", "User Stories", "SFD", "UAT", "Data Gouvernance", "Banque"],
+    color: "#6366f1",
+    url: "/projets/kyc-bnp",
+    external: false,
+    desc: "Mission Business Analyst complète simulée pour BNP Paribas Banque de Détail : analyse AS-IS/TO-BE, 18 User Stories BDD, Spécifications Fonctionnelles Détaillées, 24 scénarios UAT, data lineage et framework de gouvernance data intégré. Résultat simulé : −73% sur le délai de traitement KYC.",
+    deliverables: ["18 User Stories BDD", "SFD — 3 modules fonctionnels", "24 scénarios UAT", "Data Lineage KYC", "Dashboard KPIs post go-live"],
+  },*/
+  {
+    title: "Finance Digital Audit Dashboard — CAC40",
+    period: "Avr 2026",
+    tags: ["Data Engineering", "Machine Learning", "FastAPI", "Next.js", "Python", "Plotly", "CI/CD"],
+    color: "#6366f1",
+    url: "https://finance-audit-dashboard.vercel.app/",
+    desc: "Pipeline data end-to-end sur 10 entreprises du CAC40 : ingestion automatisée via API financière (yfinance), ETL Python, détection d'anomalies financières par Isolation Forest (scikit-learn), dashboard interactif Next.js/Plotly et génération automatique de rapports PDF d'audit. Déployé en production avec CI/CD GitHub Actions.",
+    deliverables: ["Pipeline ETL Python — 10 entreprises CAC40", "Modèle ML Isolation Forest — 8 ratios financiers", "Dashboard 3 vues : P&L, Anomalies, Comparaison", "API REST FastAPI — 5 endpoints", "Export PDF automatique", "CI/CD GitHub Actions + Render + Vercel"],
+  },
   {
     title: "BCBS239 Data Governance — Cadre réglementaire bancaire",
     period: "Fév 2026",
