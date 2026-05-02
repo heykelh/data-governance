@@ -95,7 +95,7 @@ export default function ProjetsPage() {
             Autres projets
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: 16, maxWidth: 600, lineHeight: 1.7 }}>
-            Projets réalisés en parallèle du Master Data Engineer — pipelines data, visualisation,
+            Projets réalisés en solo. Ils contiennent principalement pipelines data, data visualisation,
             gouvernance appliquée et intelligence artificielle.
           </p>
         </div>
