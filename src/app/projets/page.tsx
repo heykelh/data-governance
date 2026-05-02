@@ -13,6 +13,23 @@ const projects = [
     deliverables: ["18 User Stories BDD", "SFD — 3 modules fonctionnels", "24 scénarios UAT", "Data Lineage KYC", "Dashboard KPIs post go-live"],
   },*/
   {
+  title: "FinanceDataHub — Plateforme de Gouvernance Data & IA",
+  period: "Avr 2026",
+  tags: ["Data Governance", "BCBS 239", "DAMA-DMBOK", "EU AI Act", "Next.js", "TypeScript", "Zustand", "Recharts"],
+  color: "#1e40af",
+  url: "https://frontierbank-data.vercel.app/",
+  desc: "Simulation complète d'une mission de conseil en gouvernance Data & IA pour FrontierBank (banque fictive sous surveillance BCE). Le site couvre l'intégralité du périmètre d'un consultant data senior : diagnostic de maturité DAMA-DMBOK, framework de gouvernance & RACI, Data Catalog, Data Quality KPIs, Data Lineage bout en bout, IA Governance EU AI Act et rapport Comex. Programme interactif en 6 phases — les métriques, la conformité BCBS 239 et les modèles IA évoluent dynamiquement à chaque phase.",
+  deliverables: [
+    "Diagnostic maturité DAMA-DMBOK — 8 domaines · Score 1.0 → 4.0/5",
+    "Framework Gouvernance — RACI · Politiques · Comité DG · 6 rôles data",
+    "Data Catalog — Glossaire 30 termes · 21 datasets Snowflake certifiés",
+    "Data Quality — 4 KPIs · BCBS 239 14 principes · Plans de remédiation",
+    "Data Lineage SVG — 20 systèmes · 21 flux · Coverage 0% → 100%",
+    "IA Governance — Registre 5 modèles · EU AI Act · Drift monitoring",
+    "Rapport Comex — Budget 2.4M€ · ROI 3.2x · Synthèse exécutive",
+    "Sélecteur 6 phases — évolution dynamique de toutes les métriques"],
+  },
+  {
     title: "Finance Digital Audit Dashboard — CAC40",
     period: "Avr 2026",
     tags: ["Data Engineering", "Machine Learning", "FastAPI", "Next.js", "Python", "Plotly", "CI/CD"],
