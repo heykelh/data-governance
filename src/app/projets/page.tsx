@@ -13,6 +13,22 @@ const projects = [
     deliverables: ["18 User Stories BDD", "SFD — 3 modules fonctionnels", "24 scénarios UAT", "Data Lineage KYC", "Dashboard KPIs post go-live"],
   },*/
   {
+  title: "SNCF Data Observatory — Data Quality Monitor (en cours...)",
+  period: "Avr 2026",
+  tags: ["Data Engineering", "Data Governance", "FastAPI", "Next.js", "Python", "LangChain", "DuckDB"],
+  color: "#8b5cf6",
+  url: "https://sncf-data-observatory.vercel.app/",
+  desc: "Pipeline temps réel d'ingestion de données ferroviaires SNCF (GTFS-RT Protobuf) traitant 1 400+ trains toutes les 2 minutes. Architecture Medallion Bronze/Silver/Gold sur DuckDB, cadre de gouvernance DAMA-DMBOK complet (Data Catalog, Data Contracts, Data Lineage, Quality Score), et agent IA conversationnel permettant d'interroger 10 ans de données en langage naturel.",
+  deliverables: [
+    "Pipeline GTFS-RT temps réel — 1 400+ trains · cycle 2 min",
+    "Architecture Medallion DuckDB — Bronze / Silver / Gold",
+    "Cadre Gouvernance DAMA-DMBOK — Data Catalog · Lineage · SLA",
+    "API REST FastAPI — 14 endpoints + WebSocket",
+    "Dashboard Next.js 4 pages — Live · Historique · Gouvernance · Carte",
+    "Agent IA SQL — LangChain · Llama 3.3 70B · 10 801 enregistrements",
+  ],
+},
+  {
   title: "FinanceDataHub — Plateforme de Gouvernance Data & IA",
   period: "Avr 2026",
   tags: ["Data Governance", "BCBS 239", "DAMA-DMBOK", "EU AI Act", "Next.js", "TypeScript", "Zustand", "Recharts"],
