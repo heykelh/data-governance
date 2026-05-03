@@ -59,8 +59,8 @@ export default function AProposPage() {
                 Data Engineer · Responsable Data Gouvernance
               </p>
               <p style={{ color: "var(--text-secondary)", fontSize: 15, lineHeight: 1.75, marginBottom: 28 }}>
-                Responsable Data Gouvernance spécialisé en gouvernance des données, avec une double expertise
-                technique (Data Engineering) et opérationnelle acquise au sein de la SNCF. Expérience dans
+                Data Engineer spécialisé en gouvernance des données, avec une double expertise
+                technique et opérationnelle acquise au sein de la SNCF. Expérience dans
                 la structuration de cadres de gouvernance, la réalisation de diagnostics de maturité Data & IA
                 et le pilotage de feuilles de route Data. Capacité à fédérer des acteurs métiers, IT et fonctions
                 support dans des environnements complexes et à forts enjeux.
