@@ -8,14 +8,14 @@ const resources = [
       {
         title: "Registre des traitements Art. 30 — modèle officiel CNIL",
         format: "ODS / Excel",
-        desc: "Template officiel de la CNIL, compatible Excel, LibreOffice et OpenOffice. Inclut onglets responsable de traitement et sous-traitant, avec exemples pré-remplis.",
+        desc: "Template officiel de la CNIL, compatible Excel, LibreOffice et OpenOffice. Inclut les onglets responsable de traitement et sous-traitant, avec exemples pré-remplis.",
         source: "CNIL — cnil.fr",
         href: "https://www.cnil.fr/sites/cnil/files/atoms/files/registre-traitement-simplifie.ods",
       },
       {
-        title: "Registre des traitements Art. 30 — modèle basique Word",
+        title: "Registre des traitements Art. 30 — modèle Word basique",
         format: "PDF / Word",
-        desc: "Version Word de la CNIL pour les petites structures. Fiche par activité à dupliquer, avec champs obligatoires pré-structurés et exemples (gestion paie, prospects, fournisseurs).",
+        desc: "Version Word de la CNIL pour les petites structures. Fiche par activité à dupliquer, avec champs obligatoires pré-structurés et exemples concrets (gestion paie, prospects, fournisseurs).",
         source: "CNIL — cnil.fr",
         href: "https://www.cnil.fr/sites/cnil/files/atoms/files/registre_rgpd_basique.pdf",
       },
@@ -27,11 +27,11 @@ const resources = [
         href: "https://www.cnil.fr/fr/outil-pia-telechargez-et-installez-le-logiciel-de-la-cnil",
       },
       {
-        title: "Checker de conformité EU AI Act — outil officiel Commission Européenne",
-        format: "Outil web interactif",
-        desc: "Outil officiel de la Commission Européenne pour déterminer si votre système IA est soumis à l'AI Act et quelles obligations s'appliquent (provider, deployer, importeur).",
-        source: "Commission Européenne — ai-act-service-desk.ec.europa.eu",
-        href: "https://ai-act-service-desk.ec.europa.eu/en/eu-ai-act-compliance-checker",
+        title: "Guidelines CEPD — lignes directrices officielles",
+        format: "PDF (multi-documents)",
+        desc: "Ensemble des lignes directrices du Comité Européen de Protection des Données : transferts de données, cookies, DPO, bases légales, droits des personnes. La référence réglementaire que tout DPO cite.",
+        source: "CEPD — edpb.europa.eu",
+        href: "https://edpb.europa.eu/our-work-tools/our-documents/guidelines_fr",
       },
     ],
   },
@@ -54,18 +54,11 @@ const resources = [
         href: "https://www.dama-dk.org/onewebmedia/DAMA%20DMBOK2_PDF.pdf",
       },
       {
-        title: "EU AI Act Compliance Checker — outil interactif (Future of Life Institute)",
-        format: "Outil web interactif",
-        desc: "Outil de classification des systèmes IA selon l'EU AI Act. Couvre les niveaux de risque (interdit, élevé, limité, minimal), les obligations par rôle et le calendrier d'application post-Omnibus.",
-        source: "Future of Life Institute — artificialintelligenceact.eu",
-        href: "https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/",
-      },
-      {
-        title: "EU AI Act — checklist de conformité 40 points (Citelayer)",
-        format: "Checklist web",
-        desc: "Checklist de 40 points couvrant les 4 niveaux de risque EU AI Act : inventaire des systèmes IA, classification, documentation, obligations par rôle (provider/deployer). Mise à jour 2026.",
-        source: "Citelayer — citelayer-ai.com",
-        href: "https://citelayer-ai.com/resources/eu-ai-act-checklist/",
+        title: "Data Contract Specification — standard open source v3.0",
+        format: "YAML / GitHub",
+        desc: "Standard open source pour les Data Contracts : schéma, SLA, quality rules, ownership. Utilisé par Paypal, Mercedes-Benz, JPMC. Compatible dbt, Snowflake, Databricks.",
+        source: "datacontract.com — GitHub",
+        href: "https://datacontract.com/",
       },
     ],
   },
@@ -74,42 +67,90 @@ const resources = [
     color: "var(--accent)",
     items: [
       {
+        title: "Checker de conformité EU AI Act — outil officiel Commission Européenne",
+        format: "Outil web interactif",
+        desc: "Outil officiel de la Commission Européenne pour déterminer si votre système IA est soumis à l'AI Act et quelles obligations s'appliquent selon votre rôle (provider, deployer, importeur).",
+        source: "Commission Européenne — ai-act-service-desk.ec.europa.eu",
+        href: "https://ai-act-service-desk.ec.europa.eu/en/eu-ai-act-compliance-checker",
+      },
+      {
         title: "AI Agent Governance Toolkit — checklist EU AI Act (Microsoft)",
         format: "Markdown / GitHub",
-        desc: "Checklist complète de conformité EU AI Act par article, publiée par Microsoft sur GitHub. Couvre Art. 5 (interdictions), Art. 9-17 (haut risque), GPAI. Vérifiée contre le texte officiel Journal Officiel.",
+        desc: "Checklist complète de conformité EU AI Act article par article publiée par Microsoft sur GitHub. Couvre Art. 5 (interdictions), Art. 9-17 (haut risque), GPAI. Vérifiée contre le Journal Officiel.",
         source: "Microsoft — github.com/microsoft",
         href: "https://github.com/microsoft/agent-governance-toolkit/blob/main/docs/compliance/eu-ai-act-checklist.md",
       },
       {
-        title: "Templates EU AI Act — 20+ documents éditables (AI Act Blog)",
+        title: "Templates EU AI Act — 20+ documents éditables",
         format: "Documents éditables",
-        desc: "Plus de 20 templates EU AI Act : AI Policy, AI Register, FRIA (Art. 27), AI Governance Framework, Incident Response Plan, Transparency Notice, Conformity Assessment. Inclut un registre pré-rempli pour la banque/finance.",
+        desc: "Plus de 20 templates EU AI Act : AI Policy, AI Register, FRIA (Art. 27), AI Governance Framework, Incident Response Plan, Transparency Notice. Inclut un registre pré-rempli Banque/Finance.",
         source: "AI Act Blog — aiactblog.nl",
         href: "https://www.aiactblog.nl/en/templates",
       },
       {
         title: "EU AI Act Compliance Matrix (IAPP)",
         format: "PDF",
-        desc: "Matrice de conformité EU AI Act publiée par l'IAPP (International Association of Privacy Professionals). Vue d'ensemble des articles applicables par type d'opérateur sur systèmes à haut risque, systèmes IA et modèles GPAI.",
+        desc: "Matrice de conformité EU AI Act publiée par l'IAPP. Vue d'ensemble des articles applicables par type d'opérateur sur systèmes à haut risque, systèmes IA et modèles GPAI.",
         source: "IAPP — iapp.org",
         href: "https://iapp.org/resources/article/eu-ai-act-compliance-matrix",
       },
     ],
   },
   {
-    category: "Data Mesh & Architecture",
+    category: "Réglementation & Textes officiels",
+    color: "var(--accent-purple)",
+    items: [
+      {
+        title: "BCBS239 — texte officiel en français (BRI)",
+        format: "PDF",
+        desc: "Texte source officiel des 14 principes BCBS239 publié par la Banque des Règlements Internationaux. La référence absolue pour tout profil Data Governance en contexte bancaire et prudentiel.",
+        source: "BRI — bis.org",
+        href: "https://www.bis.org/publ/bcbs239_fr.pdf",
+      },
+      {
+        title: "BCBS239 — texte officiel en anglais (BRI)",
+        format: "PDF",
+        desc: "Version anglaise des Principles for effective risk data aggregation and risk reporting. Utilisée dans les audits BCE et les missions de conseil en gouvernance des données de risque.",
+        source: "BRI — bis.org",
+        href: "https://www.bis.org/publ/bcbs239.pdf",
+      },
+      {
+        title: "EU AI Act — texte officiel (EUR-Lex, version française)",
+        format: "PDF / HTML",
+        desc: "Règlement (UE) 2024/1689 du 13 juin 2024, publié au Journal Officiel de l'Union Européenne. Texte de référence complet avec tous les annexes, articles et considérants.",
+        source: "EUR-Lex — eur-lex.europa.eu",
+        href: "https://eur-lex.europa.eu/legal-content/FR/TXT/PDF/?uri=OJ%3AL_202401689",
+      },
+      {
+        title: "EBA — implications de l'EU AI Act pour le secteur bancaire",
+        format: "PDF",
+        desc: "Document officiel de l'EBA (novembre 2025) sur la cartographie de l'EU AI Act par rapport aux exigences prudentielles bancaires existantes. Essentiel pour comprendre l'articulation AI Act / BCBS / CRR.",
+        source: "EBA — eba.europa.eu",
+        href: "https://www.eba.europa.eu/sites/default/files/2025-11/d8b999ce-a1d9-4964-9606-971bbc2aaf89/AI%20Act%20implications%20for%20the%20EU%20banking%20sector.pdf",
+      },
+    ],
+  },
+  {
+    category: "Data Engineering & Qualité",
     color: "var(--accent-blue)",
     items: [
       {
-        title: "Data Contract Specification — open standard v3.0",
-        format: "YAML / GitHub",
-        desc: "Standard open source pour les Data Contracts : schéma, SLA, quality rules, ownership, liens systèmes. Utilisé par Paypal, Mercedes-Benz, JPMC. Compatible dbt, Snowflake, Databricks.",
-        source: "datacontract.com — GitHub",
-        href: "https://datacontract.com/",
+        title: "dbt documentation — référence complète",
+        format: "Documentation web",
+        desc: "Documentation officielle de dbt (data build tool) : modèles, tests, sources, seeds, snapshots, macros. La référence technique pour tout Data Engineer travaillant avec des entrepôts de données modernes.",
+        source: "dbt Labs — docs.getdbt.com",
+        href: "https://docs.getdbt.com/",
+      },
+      {
+        title: "Great Expectations — framework open source data quality",
+        format: "Documentation / GitHub",
+        desc: "Framework Python open source de référence pour la data quality : définition d'expectations, validation automatique des données, data docs générés automatiquement. Utilisé en production par des centaines d'équipes data.",
+        source: "Great Expectations — greatexpectations.io",
+        href: "https://docs.greatexpectations.io/",
       },
       {
         title: "Data Mesh Architecture — guide Confluent",
-        format: "PDF / Web",
+        format: "Web / PDF",
         desc: "Guide complet sur l'architecture Data Mesh : 4 principes, domain ownership, data as a product, self-serve platform, federated governance. Cas d'usage réels et patterns d'implémentation.",
         source: "Confluent — confluent.io",
         href: "https://www.confluent.io/learn/data-mesh/",
@@ -129,7 +170,7 @@ export default function RessourcesPage() {
             <span style={{ color: "var(--text-secondary)" }}>sélectionnés et vérifiés</span>
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: 16, maxWidth: 640, lineHeight: 1.7 }}>
-            Une sélection de ressources officielles et open source — CNIL, Commission Européenne, Microsoft, DAMA International. Chaque lien pointe vers la source réelle, directement téléchargeable ou accessible.
+            Une sélection de ressources officielles et open source — CNIL, Commission Européenne, BRI, EBA, Microsoft, DAMA International. Chaque lien pointe vers la source réelle, directement accessible.
           </p>
         </div>
       </section>
@@ -147,8 +188,7 @@ export default function RessourcesPage() {
                   <div style={{
                     background: "var(--bg-card)", border: "1px solid var(--border)",
                     borderRadius: 12, padding: "20px", display: "flex", flexDirection: "column", gap: 10,
-                    height: "100%", transition: "border-color 0.15s",
-                    borderLeft: `3px solid ${cat.color}`,
+                    height: "100%", borderLeft: `3px solid ${cat.color}`,
                   }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
                       <h3 style={{ fontSize: 14, fontWeight: 600, color: "var(--text-primary)", flex: 1 }}>{item.title}</h3>

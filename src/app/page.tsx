@@ -56,9 +56,10 @@ const metiers = [
     color: "var(--accent-coral)",
     resume: "Analyse exploratoire, identification d'insights et d'anomalies, conception de dashboards interactifs et mise en place de KPI de pilotage métier. Restitution claire et pédagogique à destination des décideurs : du chiffre à la recommandation business.",
     valeurBusiness: "Décisions éclairées · Anomalies détectées rapidement · Pilotage métier par les données",
-    skills: ["Power BI", "SQL", "Python (pandas, matplotlib)", "Analyse exploratoire", "KPI et dashboarding", "Visualisation de données", "Restitution stratégique"],
+    skills: ["Power BI", "SQL", "Python (pandas, matplotlib)", "scikit-learn (ML)", "Analyse exploratoire", "KPI et dashboarding", "Visualisation de données", "Restitution stratégique"],
     reglementaire: [],
     projets: [
+      { title: "Finance Audit Dashboard — CAC40", desc: "Détection automatique d'anomalies financières sur 10 entreprises du CAC40 via ML (Isolation Forest). Pipeline Python complet, API FastAPI, dashboard Plotly interactif. Données réelles Yahoo Finance.", href: "https://finance-audit-dashboard.vercel.app/", tag: "Live" },
       { title: "Customer Experience Intelligence", desc: "Analyse de données clients, identification de tendances et anomalies, dashboards Power BI interactifs et KPI de pilotage de la performance.", href: "https://github.com/heykelh/customer-experience-intelligence", tag: "GitHub" },
     ],
   },
@@ -199,7 +200,7 @@ export default function HomePage() {
                 Data Engineer & Data Consultant
               </p>
               <p style={{ fontSize: 15, color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: 28, maxWidth: 520 }}>
-                Double expertise technique et métier : pipelines data, qualité des données, gouvernance réglementaire et IA Compliance. Ce site regroupe l'ensemble de mes projets et démontre concrètement ce que je sais faire.
+                Double expertise technique et métier : pipelines data, qualité des données, gouvernance réglementaire et IA Compliance. Ce site regroupe l'ensemble de mes projets.
               </p>
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
                 <a href="#expertises" style={{ padding: "11px 22px", borderRadius: 9, fontSize: 14, fontWeight: 500, background: "var(--accent)", color: "#0e0f0e", textDecoration: "none" }}>Explorer mes expertises</a>

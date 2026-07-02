@@ -14,7 +14,8 @@ const modules = [
 const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/a-propos", label: "À propos" },
-  { href: "/projets", label: "Autres projets" },
+  { href: "/projets", label: "Projets" },
+  { href: "/case-studies", label: "Case Studies" },
   { href: "/ressources", label: "Ressources" },
   { href: "/contact", label: "Contact" },
 ];

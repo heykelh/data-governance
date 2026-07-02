@@ -60,6 +60,7 @@ export function Footer() {
               { href: "/projets", label: "Autres projets" },
               { href: "/ressources", label: "Ressources" },
               { href: "/contact", label: "Contact" },
+              { href: "/case-studies", label: "Case Studies" },
             ].map(l => (
               <Link key={l.href} href={l.href} style={{
                 display: "block", fontSize: 13, color: "var(--text-secondary)",
@@ -71,7 +72,7 @@ export function Footer() {
 
         <div style={{ borderTop: "1px solid var(--border)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <p style={{ fontSize: 12, color: "var(--text-tertiary)" }}>
-            © {new Date().getFullYear()} Heykel Hachiche — Data Governance & AI Compliance
+            © {new Date().getFullYear()} Heykel Hachiche — Data Engineering & Data Consulting
           </p>
           <p style={{ fontSize: 12, color: "var(--text-tertiary)" }}>
             Paris, Île-de-France
