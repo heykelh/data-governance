@@ -3,35 +3,20 @@ export function HeroSection() {
   return (
     <section style={{
       minHeight: "100vh", display: "flex", alignItems: "center",
-      padding: "120px 24px 80px", position: "relative", overflow: "hidden",
+      padding: "120px 24px 80px",
     }}>
-      <div style={{
-        position: "absolute", inset: 0, zIndex: 0,
-        backgroundImage: "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
-        backgroundSize: "60px 60px",
-      }} />
-      <div style={{
-        position: "absolute", top: "20%", left: "10%", width: 500, height: 500,
-        background: "radial-gradient(circle, rgba(74,222,128,0.05) 0%, transparent 65%)",
-        pointerEvents: "none", zIndex: 0,
-      }} />
-      <div style={{
-        position: "absolute", bottom: "10%", right: "5%", width: 400, height: 400,
-        background: "radial-gradient(circle, rgba(167,139,250,0.04) 0%, transparent 65%)",
-        pointerEvents: "none", zIndex: 0,
-      }} />
-
-      <div style={{ maxWidth: 1200, margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", width: "100%" }}>
         <div style={{ maxWidth: 760 }}>
 
           <div className="animate-fade-up" style={{
             display: "inline-flex", alignItems: "center", gap: 8,
-            padding: "5px 12px", borderRadius: 99,
-            background: "var(--bg-card)", border: "1px solid var(--border)",
+            padding: "6px 14px", borderRadius: 99,
+            background: "var(--accent-dim)", border: "1px solid var(--accent-border)",
             marginBottom: 28,
           }}>
-            <span style={{ fontSize: 11, fontWeight: 500, color: "var(--text-tertiary)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              Data Governance · AI Compliance · RGPD · Audit
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", display: "inline-block" }} />
+            <span style={{ fontSize: 12, fontWeight: 500, color: "var(--accent)", letterSpacing: "0.05em" }}>
+              Data Engineering · Data Consulting
             </span>
           </div>
 
@@ -40,39 +25,26 @@ export function HeroSection() {
             <span style={{ color: "var(--accent)" }}>Hachiche</span>
           </h1>
 
-          <p className="animate-fade-up delay-200" style={{ fontSize: "clamp(16px, 2vw, 20px)", color: "var(--text-secondary)", maxWidth: 580, lineHeight: 1.65, marginBottom: 16 }}>
-            Data Engineer & Responsable Data Gouvernance.
+          <p className="animate-fade-up delay-200" style={{ fontSize: "clamp(16px, 2vw, 20px)", color: "var(--accent-purple)", fontWeight: 500, marginBottom: 12 }}>
+            Data Engineer & Data Consultant
           </p>
-          <p className="animate-fade-up delay-200" style={{ fontSize: "clamp(15px, 1.8vw, 18px)", color: "var(--text-tertiary)", maxWidth: 580, lineHeight: 1.65, marginBottom: 40 }}>
-            Projets opérationnels sur des cas réels — RGPD, maturité data, EU AI Act, Solvency II et Data Mesh.
-            De la donnée brute à la décision fiable.
+
+          <p className="animate-fade-up delay-200" style={{ fontSize: "clamp(14px, 1.5vw, 17px)", color: "var(--text-secondary)", maxWidth: 580, lineHeight: 1.65, marginBottom: 40 }}>
+            Double expertise technique et métier : pipelines data, qualité des données, gouvernance réglementaire et IA Compliance. Ce site regroupe l'ensemble de mes projets et démontre concrètement ce que je sais faire.
           </p>
 
           <div className="animate-fade-up delay-300" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <a href="#projets" style={{
+            <a href="#expertises" style={{
               padding: "12px 24px", borderRadius: 10, fontSize: 14, fontWeight: 500,
-              background: "var(--accent)", color: "#0e0f0e", textDecoration: "none",
-            }}>Voir les projets</a>
+              background: "var(--accent)", color: "#ffffff", textDecoration: "none",
+            }}>Voir mes expertises</a>
             <a href="/a-propos" style={{
               padding: "12px 24px", borderRadius: 10, fontSize: 14, fontWeight: 500,
               background: "var(--bg-card)", border: "1px solid var(--border)",
               color: "var(--text-primary)", textDecoration: "none",
-            }}>À propos</a>
+            }}>Mon parcours</a>
           </div>
 
-          <div className="animate-fade-up delay-400" style={{ display: "flex", gap: 32, marginTop: 64, flexWrap: "wrap" }}>
-            {[
-              { num: "5", label: "projets Data Gouvernance" },
-              { num: "12+", label: "ans terrain SNCF" },
-              { num: "5+", label: "projets Data Engineering" },
-              { num: "1", label: "site, tout dedans" },
-            ].map(s => (
-              <div key={s.num}>
-                <div style={{ fontSize: 28, fontWeight: 800, fontFamily: "var(--font-display)", color: "var(--text-primary)" }}>{s.num}</div>
-                <div style={{ fontSize: 12, color: "var(--text-tertiary)", marginTop: 2 }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
