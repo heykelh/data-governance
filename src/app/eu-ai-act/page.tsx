@@ -11,7 +11,7 @@ const riskLevels = [
 const aiRegister = [
   { id: "AI-001", name: "Scoring crédit retail", dept: "Risk Management", risk: "Élevé", status: "Non conforme", owner: "CDO Finance", lastReview: "Jan 2026", obligations: ["Évaluation conformité", "Enregistrement EU AI Act", "Supervision humaine obligatoire", "Documentation technique complète"] },
   { id: "AI-002", name: "Détection fraude carte", dept: "Sécurité financière", risk: "Élevé", status: "En cours", owner: "CDO Ops", lastReview: "Fév 2026", obligations: ["Évaluation conformité", "Tests robustesse & fiabilité", "Gestion des biais algorithmiques", "Log et traçabilité des décisions"] },
-  { id: "AI-003", name: "KYC — Vérification identité", dept: "Conformité", risk: "Élevé", status: "Conforme", owner: "CCO", lastReview: "Mar 2026", obligations: ["Enregistrement validé", "Supervision humaine active", "Rapport d'évaluation déposé"] },
+  { id: "AI-003", name: "KYC ,  Vérification identité", dept: "Conformité", risk: "Élevé", status: "Conforme", owner: "CCO", lastReview: "Mar 2026", obligations: ["Enregistrement validé", "Supervision humaine active", "Rapport d'évaluation déposé"] },
   { id: "AI-004", name: "Chatbot service client", dept: "Digital", risk: "Limité", status: "Conforme", owner: "CDO Digital", lastReview: "Jan 2026", obligations: ["Mention IA visible obligatoire"] },
   { id: "AI-005", name: "Recommandations produits", dept: "Marketing", risk: "Minimal", status: "Conforme", owner: "CMO", lastReview: "Déc 2025", obligations: ["Aucune obligation spécifique"] },
   { id: "AI-006", name: "Scoring comportemental", dept: "Crédit consommation", risk: "Élevé", status: "Non conforme", owner: "CDO Finance", lastReview: "Nov 2025", obligations: ["Évaluation conformité urgente", "Droit d'explication client", "Supervision humaine à implémenter"] },
@@ -53,7 +53,7 @@ export default function EUAIActPage() {
         </section>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Classification des risques — 4 niveaux</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Classification des risques ,  4 niveaux</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>Tout système IA doit être classifié selon cette hiérarchie avant déploiement.</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {riskLevels.map((r, i) => (
@@ -73,7 +73,7 @@ export default function EUAIActPage() {
         </section>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>AI Risk Register — Cas fictif BNP Paribas</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>AI Risk Register ,  Cas fictif BNP Paribas</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>
             Inventaire structuré des systèmes IA par niveau de risque EU AI Act. Template opérationnel applicable
             à tout établissement financier.

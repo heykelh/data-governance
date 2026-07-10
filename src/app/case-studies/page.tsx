@@ -1,14 +1,40 @@
-// src/app/case-studies/page.tsx
 "use client";
 import Link from "next/link";
 
 const cases = [
   {
-    id: "frontierbank",
+    id: "regard",
     num: "01",
+    metier: "IA & Agents",
+    metierColor: "var(--accent-rose)",
+    title: "REGARD ,  Copilote IA de conformité réglementaire",
+    context: "Les équipes conformité des banques et assureurs passent des heures à interroger manuellement des textes réglementaires (BCBS239, Solvency II, EU AI Act) pour répondre à des questions opérationnelles. Les LLM généralistes hallucinent sur des sujets aussi précis et ne sont pas auditables. Il n'existe pas d'outil IA spécialisé, fiable et traçable pour ce besoin.",
+    mission: "Concevoir un copilote IA de conformité architecturé sur le principe déterministe-first : le LLM n'intervient que sur les cas genuinement ambigus, les filtres déterministes traitent 80% des requêtes. Pipeline RAG complet, orchestration multi-agent LangGraph, autocontrôle LLM-juge, refus motivés et observabilité totale.",
+    objectifs: [
+      { metric: "28/28", label: "cas de test validés", detail: "100% de réussite sur le golden dataset de référence ,  zéro régression tolérée" },
+      { metric: "80%", label: "des requêtes traitées", detail: "par filtres déterministes avant même d'appeler le LLM ,  architecture fiable par design" },
+      { metric: "100%", label: "des refus motivés", detail: "chaque refus expose la règle qui l'a déclenché ,  auditabilité totale des décisions IA" },
+      { metric: "0", label: "hallucination sur les sources", detail: "chaque réponse cite sa source documentaire avec extrait ,  pas de génération non tracée" },
+    ],
+    livrables: [
+      "Pipeline RAG complet (bronze → silver → gold) sur données réglementaires réelles",
+      "Orchestration multi-agent LangGraph avec 7 capacités agentiques",
+      "Autocontrôle LLM-juge avec scoring de fiabilité par réponse",
+      "Système de refus motivés avec journal d'audit structuré",
+      "Observabilité Langfuse ,  traces, latences, coûts par requête",
+      "Harness d'évaluation Python avec dataset golden 28 cas",
+      "Dashboard Next.js avec interface de chat gouvernée",
+      "Agrégation par devise et citations de sources vérifiables",
+    ],
+    stack: ["LangGraph.js", "Groq (Llama 3.3 70B)", "Gemini 2.0 Flash", "RAG", "DuckDB-WASM", "Supabase", "Langfuse", "Next.js 15", "Tailwind 4", "Python (eval harness)"],
+    href: "https://regard-wine.vercel.app/",
+  },
+  {
+    id: "frontierbank",
+    num: "02",
     metier: "Data Consulting",
     metierColor: "var(--accent-purple)",
-    title: "FrontierBank — Mission de transformation Data Governance",
+    title: "FrontierBank ,  Mission de transformation Data Governance",
     context: "Une banque de taille intermédiaire sous surveillance prudentielle de la BCE dispose de 18 mois avant une inspection formelle. Aucun des 14 principes BCBS239 n'est conforme. Les données critiques ne sont pas tracées. Des modèles IA sont déployés en production sans cadre de validation ni documentation technique.",
     mission: "Piloter le programme de gouvernance data de A à Z sur 12 mois en tant que consultant data embarqué. Animer les ateliers métiers, IT et conformité. Produire l'ensemble des livrables réglementaires et préparer le Comex à l'inspection BCE.",
     objectifs: [
@@ -17,21 +43,21 @@ const cases = [
       { metric: "8 domaines", label: "DAMA-DMBOK couverts", detail: "diagnostic de maturité complet sur l'ensemble des axes de gouvernance" },
       { metric: "100%", label: "modèles IA enregistrés", detail: "AI Risk Register complet avec classification EU AI Act par système" },
     ],
-    livrables: ["Diagnostic maturité DAMA-DMBOK (8 domaines)", "Cadre de gouvernance — rôles, RACI, comités", "Data Catalog avec glossaire certifié", "Data Quality KPI par domaine avec SLA", "Data Lineage graphe flux systèmes sources vers reporting", "AI Register — EU AI Act, drift monitoring", "Rapport Comex — synthèse, budget, ROI, décisions DG"],
+    livrables: ["Diagnostic maturité DAMA-DMBOK (8 domaines)", "Cadre de gouvernance ,  rôles, RACI, comités", "Data Catalog avec glossaire certifié", "Data Quality KPI par domaine avec SLA", "Data Lineage graphe flux systèmes sources vers reporting", "AI Register ,  EU AI Act, drift monitoring", "Rapport Comex ,  synthèse, budget, ROI, décisions DG"],
     stack: ["DAMA-DMBOK", "BCBS239", "EU AI Act", "Data Catalog", "Data Lineage", "Data Quality"],
     href: "https://frontierbank-data.vercel.app/",
   },
   {
     id: "bcbs239",
-    num: "02",
+    num: "03",
     metier: "Data Governance",
     metierColor: "var(--accent)",
-    title: "Audit & Gouvernance Data — Cadre BCBS239",
+    title: "Audit & Gouvernance Data ,  Cadre BCBS239",
     context: "Un établissement financier ne dispose d'aucun cadre formel de gouvernance des données de risque. Les données critiques de provisionnement et de reporting réglementaire ne sont pas tracées, les rôles sont flous et les contrôles absents. Le risque d'erreur sur les indicateurs de pilotage financier est élevé.",
     mission: "Réaliser un diagnostic complet du dispositif data et structurer un cadre de gouvernance orienté pilotage financier et performance métier, en conformité avec les 14 principes BCBS239.",
     objectifs: [
       { metric: "100%", label: "données critiques tracées", detail: "data lineage documenté sur l'ensemble des flux de données de risque" },
-      { metric: "−60%", label: "réduction des erreurs de reporting", detail: "grâce aux contrôles qualité automatisés et aux rôles clairement définis" },
+      { metric: "−60%", label: "erreurs de reporting", detail: "grâce aux contrôles qualité automatisés et aux rôles clairement définis" },
       { metric: "J+1", label: "fraîcheur des données critiques", detail: "SLA de disponibilité des données pour le pilotage quotidien des risques" },
       { metric: "3 rôles", label: "data activés", detail: "Data Owner, Data Steward et IT Owner formellement nommés et opérationnels" },
     ],
@@ -41,29 +67,29 @@ const cases = [
   },
   {
     id: "gouvernance-critique",
-    num: "03",
+    num: "04",
     metier: "Data Governance",
     metierColor: "var(--accent)",
     title: "Programme de Gouvernance des Données Critiques",
-    context: "Une organisation gère des données critiques sur les incidents et la performance opérationnelle sans cadre de gouvernance formalisé. Les responsabilités sont dispersées, la qualité des données n'est pas mesurée et il n'existe pas de processus de gestion des incidents data. La prise de décision s'appuie sur des données dont la fiabilité n'est pas garantie.",
+    context: "Une organisation gère des données critiques sur les incidents et la performance opérationnelle sans cadre de gouvernance formalisé. Les responsabilités sont dispersées, la qualité des données n'est pas mesurée et il n'existe pas de processus de gestion des incidents data.",
     mission: "Concevoir et déployer un cadre de gouvernance data complet sur le périmètre incidents et performance, incluant le diagnostic de maturité, la structuration des rôles, le cadre qualité et la feuille de route.",
     objectifs: [
-      { metric: "+40%", label: "fiabilité des indicateurs de performance", detail: "grâce au cadre qualité avec KPI, SLA et contrôles automatisés" },
-      { metric: "< 4h", label: "délai de détection des incidents data", detail: "contre plusieurs jours sans processus formalisé" },
+      { metric: "+40%", label: "fiabilité des indicateurs", detail: "grâce au cadre qualité avec KPI, SLA et contrôles automatisés" },
+      { metric: "< 4h", label: "délai de détection incidents data", detail: "contre plusieurs jours sans processus formalisé" },
       { metric: "1 modèle", label: "de gouvernance fédéré", detail: "applicable à l'ensemble des domaines de l'organisation" },
       { metric: "5 niveaux", label: "de maturité évalués", detail: "diagnostic DAMA-DMBOK sur tous les axes clés du dispositif data" },
     ],
-    livrables: ["Diagnostic de maturité Data & IA (5 niveaux)", "Modèle de gouvernance fédéré à l'échelle transverse", "Matrice RACI — Data Owner, Data Steward, IT", "Cadre Data Quality (KPI, SLA, contrôles)", "Processus de gestion des incidents Data", "Feuille de route Data priorisée sur 18 mois"],
+    livrables: ["Diagnostic de maturité Data & IA (5 niveaux)", "Modèle de gouvernance fédéré à l'échelle transverse", "Matrice RACI ,  Data Owner, Data Steward, IT", "Cadre Data Quality (KPI, SLA, contrôles)", "Processus de gestion des incidents Data", "Feuille de route Data priorisée sur 18 mois"],
     stack: ["DAMA-DMBOK", "Data Quality", "RACI", "Diagnostic maturité", "Roadmap data"],
     href: "https://www.canva.com/design/DAHBNgAQtnw/Ru9E56mpd2qyDSzXKGhMIw/view",
   },
   {
     id: "naomi",
-    num: "04",
+    num: "05",
     metier: "Data Steward",
     metierColor: "var(--accent-purple)",
-    title: "Naomi Data Steward Lab — SNCF Voyageurs",
-    context: "L'écosystème de données ouvertes SNCF Voyageurs (système Naomi) expose des données réelles de transport mais sans cadre de stewardship formalisé : pas de glossaire métier, pas de documentation des datasets, pas de règles de qualité définies. Les utilisateurs des données ne savent pas qui contacter en cas d'anomalie ni quelles règles s'appliquent.",
+    title: "Naomi Data Steward Lab ,  SNCF Voyageurs",
+    context: "L'écosystème de données ouvertes SNCF Voyageurs (système Naomi) expose des données réelles de transport mais sans cadre de stewardship formalisé : pas de glossaire métier, pas de documentation des datasets, pas de règles de qualité définies.",
     mission: "Simuler le rôle opérationnel d'un Data Steward sur l'écosystème Naomi : documenter les données, construire le glossaire métier, définir les règles de qualité et établir les processus de remédiation sur des données réelles.",
     objectifs: [
       { metric: "100%", label: "datasets documentés", detail: "fiches de données complètes avec métadonnées business et techniques" },
@@ -77,35 +103,35 @@ const cases = [
   },
   {
     id: "finance-audit",
-    num: "05",
+    num: "06",
     metier: "Data Analyst",
     metierColor: "var(--accent-coral)",
-    title: "Finance Audit Dashboard — Détection d'anomalies CAC40",
-    context: "Dans les cabinets d'audit (EY, Deloitte, PwC), les auditeurs analysent chaque année les comptes de leurs clients dans Excel : calcul de ratios, comparaison annuelle, recherche d'outliers. C'est un travail long, fastidieux et exposé aux erreurs humaines. Pour 10 entreprises du CAC40, ce processus prend plusieurs semaines.",
+    title: "Finance Audit Dashboard ,  Détection d'anomalies CAC40",
+    context: "Dans les cabinets d'audit, les auditeurs analysent chaque année les comptes de leurs clients dans Excel. Pour 10 entreprises du CAC40, ce processus prend plusieurs semaines et reste exposé aux erreurs humaines.",
     mission: "Automatiser la détection d'anomalies financières sur 10 entreprises du CAC40 via un pipeline data complet et un algorithme ML, réduisant de plusieurs semaines à quelques secondes le temps d'analyse.",
     objectifs: [
-      { metric: "10 sec", label: "pour analyser 10 entreprises", detail: "contre plusieurs semaines d'analyse manuelle dans Excel pour un auditeur" },
-      { metric: "5 ans", label: "de données financières réelles", detail: "Yahoo Finance via yfinance — états financiers officiels CAC40" },
+      { metric: "10 sec", label: "pour analyser 10 entreprises", detail: "contre plusieurs semaines d'analyse manuelle dans Excel" },
+      { metric: "5 ans", label: "de données financières réelles", detail: "Yahoo Finance via yfinance ,  états financiers officiels CAC40" },
       { metric: "8 ratios", label: "financiers calculés automatiquement", detail: "marge brute, EBITDA, ROE, dette/fonds propres, current ratio, OPEX, croissance CA" },
-      { metric: "100%", label: "objectif sur le score d'anomalie", detail: "Kering 2025 : ratio de liquidité statistiquement hors-norme vs le secteur CAC40" },
+      { metric: "100%", label: "score d'anomalie objectivé", detail: "Isolation Forest ,  scoring 0 à 100, statistiquement fondé" },
     ],
-    livrables: ["Pipeline ETL Python (Yahoo Finance → SQLite)", "Modèle ML Isolation Forest — scoring d'anomalie 0 à 100", "API FastAPI (4 endpoints)", "Dashboard Next.js avec graphiques Plotly interactifs", "3 vues : entreprise, anomalies globales, comparaison"],
+    livrables: ["Pipeline ETL Python (Yahoo Finance → SQLite)", "Modèle ML Isolation Forest ,  scoring d'anomalie 0 à 100", "API FastAPI (4 endpoints)", "Dashboard Next.js avec graphiques Plotly interactifs", "3 vues : entreprise, anomalies globales, comparaison"],
     stack: ["Python", "yfinance", "pandas", "scikit-learn", "FastAPI", "SQLite", "Next.js", "Plotly.js"],
     href: "https://finance-audit-dashboard.vercel.app/",
   },
   {
     id: "customer-experience",
-    num: "06",
+    num: "07",
     metier: "Data Analyst",
     metierColor: "var(--accent-coral)",
     title: "Customer Experience Intelligence",
-    context: "Une organisation collecte des données clients (transactions, comportements, réclamations) mais ne dispose pas d'outil de pilotage permettant d'identifier rapidement les anomalies, les tendances de satisfaction ou les segments à risque. Les décisions marketing et opérationnelles se prennent sans visibilité data.",
+    context: "Une organisation collecte des données clients mais ne dispose pas d'outil de pilotage permettant d'identifier rapidement les anomalies, les tendances de satisfaction ou les segments à risque. Les décisions se prennent sans visibilité data.",
     mission: "Analyser les données clients, identifier les insights et anomalies impactant la performance, et construire des dashboards Power BI permettant un pilotage opérationnel par les données.",
     objectifs: [
-      { metric: "+25%", label: "rapidité de détection des anomalies", detail: "grâce aux alertes automatiques intégrées dans le dashboard Power BI" },
-      { metric: "< 1 jour", label: "pour produire un rapport de performance", detail: "contre plusieurs jours de consolidation manuelle avant le projet" },
-      { metric: "5 KPI", label: "de pilotage définis et automatisés", detail: "NPS, taux de réclamation, délai de résolution, taux de rétention, panier moyen" },
-      { metric: "3 segments", label: "clients identifiés et actionnables", detail: "segmentation comportementale permettant des actions ciblées" },
+      { metric: "+25%", label: "rapidité de détection anomalies", detail: "grâce aux alertes automatiques intégrées dans le dashboard Power BI" },
+      { metric: "< 1 jour", label: "pour produire un rapport", detail: "contre plusieurs jours de consolidation manuelle avant le projet" },
+      { metric: "5 KPI", label: "de pilotage automatisés", detail: "NPS, taux de réclamation, délai de résolution, rétention, panier moyen" },
+      { metric: "3 segments", label: "clients identifiés", detail: "segmentation comportementale permettant des actions ciblées" },
     ],
     livrables: ["Analyse exploratoire complète des données clients", "5 KPI de pilotage définis avec seuils d'alerte", "Dashboards Power BI interactifs (3 vues)", "Rapport de recommandations business actionnable"],
     stack: ["Power BI", "Python (pandas)", "SQL", "Analyse exploratoire", "KPI", "Data Visualisation"],
@@ -113,17 +139,17 @@ const cases = [
   },
   {
     id: "kuala-lumpur",
-    num: "07",
-    metier: "Data Engineering",
-    metierColor: "var(--accent-amber)",
-    title: "AI for Kuala Lumpur — Plateforme Data Urbaine",
-    context: "Les décideurs urbains (urbanistes, collectivités, investisseurs) manquent d'outils pour exploiter les données ouvertes disponibles sur une métropole en croissance rapide comme Kuala Lumpur. Les données sont dispersées, hétérogènes et non exploitables sans infrastructure data dédiée.",
+    num: "08",
+    metier: "IA & Agents",
+    metierColor: "var(--accent-rose)",
+    title: "AI for Kuala Lumpur ,  Plateforme Data & IA Urbaine",
+    context: "Les décideurs urbains manquent d'outils pour exploiter les données ouvertes disponibles sur une métropole en croissance rapide. Les données sont dispersées, hétérogènes et non exploitables sans infrastructure data dédiée.",
     mission: "Concevoir et déployer une plateforme data multi-sources permettant d'analyser des données urbaines complexes et de faciliter la prise de décision stratégique via des cas d'usage IA.",
     objectifs: [
-      { metric: "Multi-sources", label: "API et open data intégrées", detail: "pipeline automatisé agrégeant des données de transport, démographie, économie et environnement" },
-      { metric: "< 5 min", label: "pour générer un insight urbain", detail: "contre des heures de collecte et consolidation manuelle de données dispersées" },
-      { metric: "100%", label: "données réelles, zéro simulation", detail: "toutes les données proviennent de sources ouvertes officielles vérifiées" },
-      { metric: "3 cas IA", label: "d'aide à la décision implémentés", detail: "analyse prédictive, détection de tendances, génération d'insights automatisée" },
+      { metric: "< 5 min", label: "pour générer un insight urbain", detail: "contre des heures de collecte et consolidation manuelle" },
+      { metric: "Multi-sources", label: "API et open data intégrées", detail: "pipeline agrégeant transport, démographie, économie et environnement" },
+      { metric: "100%", label: "données réelles", detail: "toutes les données proviennent de sources ouvertes officielles vérifiées" },
+      { metric: "3 cas IA", label: "implémentés", detail: "analyse prédictive, détection de tendances, génération d'insights automatisée" },
     ],
     livrables: ["Pipeline data multi-sources automatisé", "Intégration API et open datasets", "3 cas d'usage IA opérationnels", "Interface de visualisation et d'exploration des données"],
     stack: ["Python", "FastAPI", "APIs REST", "ETL Pipeline", "Next.js", "Data Visualisation"],
@@ -131,17 +157,17 @@ const cases = [
   },
   {
     id: "cryptobot",
-    num: "08",
+    num: "09",
     metier: "Data Engineering",
     metierColor: "var(--accent-amber)",
-    title: "CryptoBot — Pipeline Data Temps Réel",
-    context: "Les données de marchés crypto évoluent en temps réel et nécessitent une infrastructure capable d'ingérer, transformer et exposer des données en quasi temps réel. Sans pipeline structuré, les données sont inaccessibles pour l'analyse ou la prise de décision rapide.",
-    mission: "Concevoir un pipeline data complet de bout en bout : ingestion depuis l'API crypto, transformation, stockage SQL structuré, et exposition via des indicateurs de performance visualisés en quasi temps réel.",
+    title: "CryptoBot ,  Pipeline Data Temps Réel",
+    context: "Les données de marchés crypto évoluent en temps réel et nécessitent une infrastructure capable d'ingérer, transformer et exposer des données en quasi temps réel. Sans pipeline structuré, les données sont inaccessibles pour l'analyse.",
+    mission: "Concevoir un pipeline data complet de bout en bout : ingestion depuis l'API crypto, transformation, stockage SQL structuré, et exposition via des indicateurs de performance en quasi temps réel.",
     objectifs: [
-      { metric: "< 60 sec", label: "délai d'ingestion des données", detail: "de la source API au stockage SQL structuré prêt à l'exploitation" },
+      { metric: "< 60 sec", label: "délai d'ingestion", detail: "de la source API au stockage SQL structuré prêt à l'exploitation" },
       { metric: "4 étapes", label: "de pipeline couvertes", detail: "API → ingestion → transformation → stockage SQL → visualisation" },
-      { metric: "100%", label: "données nettoyées et structurées", detail: "pipeline de transformation garantissant qualité, cohérence et exploitabilité" },
-      { metric: "5 KPI", label: "de performance calculés automatiquement", detail: "prix, volume, volatilité, tendance, momentum — mis à jour en continu" },
+      { metric: "100%", label: "données nettoyées", detail: "pipeline de transformation garantissant qualité, cohérence et exploitabilité" },
+      { metric: "5 KPI", label: "calculés automatiquement", detail: "prix, volume, volatilité, tendance, momentum ,  mis à jour en continu" },
     ],
     livrables: ["Pipeline ETL complet (API → SQL)", "Processus de nettoyage et transformation des données", "Base SQL structurée et optimisée", "Tableau de bord des indicateurs de performance", "Documentation technique du pipeline"],
     stack: ["Python", "SQL", "API REST", "ETL", "Data Pipeline", "Visualisation"],
@@ -150,6 +176,7 @@ const cases = [
 ];
 
 const metierColors: Record<string, string> = {
+  "IA & Agents": "var(--accent-rose)",
   "Data Consulting": "var(--accent-purple)",
   "Data Governance": "var(--accent)",
   "Data Steward": "var(--accent-purple)",
@@ -164,14 +191,14 @@ export default function CaseStudiesPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 12 }}>Case Studies</p>
           <h1 style={{ fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 800, marginBottom: 16 }}>
-            8 projets réels.<br />
+            9 projets réels.<br />
             <span style={{ color: "var(--text-secondary)" }}>Des problèmes concrets. Des résultats chiffrés.</span>
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: 16, maxWidth: 640, lineHeight: 1.7 }}>
             Chaque projet résout un problème business identifié. Les objectifs sont chiffrés, les livrables sont réels, les technologies sont celles utilisées en production.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 24 }}>
-            {Object.entries(metierColors).map(([m, c]) => (
+            {Object.entries(metierColors).filter((v, i, a) => a.findIndex(x => x[1] === v[1]) === i).map(([m, c]) => (
               <span key={m} style={{ fontSize: 11, padding: "4px 12px", borderRadius: 99, fontWeight: 500, background: `color-mix(in srgb, ${c} 12%, transparent)`, color: c, border: `1px solid color-mix(in srgb, ${c} 30%, transparent)` }}>{m}</span>
             ))}
           </div>
@@ -182,7 +209,6 @@ export default function CaseStudiesPage() {
         {cases.map(c => (
           <div key={c.id} style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 16, overflow: "hidden", borderLeft: `4px solid ${c.metierColor}` }}>
 
-            {/* Header */}
             <div style={{ padding: "24px 28px", borderBottom: "1px solid var(--border)" }}>
               <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
                 <div>
@@ -200,8 +226,6 @@ export default function CaseStudiesPage() {
             </div>
 
             <div style={{ padding: "24px 28px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }} className="case-grid">
-
-              {/* Left */}
               <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
                 <div>
                   <p style={{ fontSize: 11, fontWeight: 600, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8 }}>Contexte</p>
@@ -232,7 +256,6 @@ export default function CaseStudiesPage() {
                 </div>
               </div>
 
-              {/* Right — objectifs chiffrés */}
               <div>
                 <p style={{ fontSize: 11, fontWeight: 600, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 }}>Objectifs & résultats</p>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>

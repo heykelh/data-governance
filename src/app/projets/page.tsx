@@ -2,104 +2,124 @@
 import Link from "next/link";
 
 const projects = [
-  /*{
-    title: "KYC Digital Transformation — Business Analysis",
-    period: "Avr 2026",
-    tags: ["Business Analysis", "KYC / LCB-FT", "User Stories", "SFD", "UAT", "Data Gouvernance", "Banque"],
-    color: "#6366f1",
-    url: "/projets/kyc-bnp",
-    external: false,
-    desc: "Mission Business Analyst complète simulée pour BNP Paribas Banque de Détail : analyse AS-IS/TO-BE, 18 User Stories BDD, Spécifications Fonctionnelles Détaillées, 24 scénarios UAT, data lineage et framework de gouvernance data intégré. Résultat simulé : −73% sur le délai de traitement KYC.",
-    deliverables: ["18 User Stories BDD", "SFD — 3 modules fonctionnels", "24 scénarios UAT", "Data Lineage KYC", "Dashboard KPIs post go-live"],
-  },*/
   {
-  title: "SNCF Data Observatory — Data Quality Monitor (en cours...)",
-  period: "Avr 2026",
-  tags: ["Data Engineering", "Data Governance", "FastAPI", "Next.js", "Python", "LangChain", "DuckDB"],
-  color: "#8b5cf6",
-  url: "https://sncf-data-observatory.vercel.app/",
-  desc: "Pipeline temps réel d'ingestion de données ferroviaires SNCF (GTFS-RT Protobuf) traitant 1 400+ trains toutes les 2 minutes. Architecture Medallion Bronze/Silver/Gold sur DuckDB, cadre de gouvernance DAMA-DMBOK complet (Data Catalog, Data Contracts, Data Lineage, Quality Score), et agent IA conversationnel permettant d'interroger 10 ans de données en langage naturel.",
-  deliverables: [
-    "Pipeline GTFS-RT temps réel — 1 400+ trains · cycle 2 min",
-    "Architecture Medallion DuckDB — Bronze / Silver / Gold",
-    "Cadre Gouvernance DAMA-DMBOK — Data Catalog · Lineage · SLA",
-    "API REST FastAPI — 14 endpoints + WebSocket",
-    "Dashboard Next.js 4 pages — Live · Historique · Gouvernance · Carte",
-    "Agent IA SQL — LangChain · Llama 3.3 70B · 10 801 enregistrements",
-  ],
-},
-  {
-  title: "FinanceDataHub — Plateforme de Gouvernance Data & IA",
-  period: "Avr 2026",
-  tags: ["Data Governance", "BCBS 239", "DAMA-DMBOK", "EU AI Act", "Next.js", "TypeScript", "Zustand", "Recharts"],
-  color: "#1e40af",
-  url: "https://frontierbank-data.vercel.app/",
-  desc: "Simulation complète d'une mission de conseil en gouvernance Data & IA pour FrontierBank (banque fictive sous surveillance BCE). Le site couvre l'intégralité du périmètre d'un consultant data senior : diagnostic de maturité DAMA-DMBOK, framework de gouvernance & RACI, Data Catalog, Data Quality KPIs, Data Lineage bout en bout, IA Governance EU AI Act et rapport Comex. Programme interactif en 6 phases — les métriques, la conformité BCBS 239 et les modèles IA évoluent dynamiquement à chaque phase.",
-  deliverables: [
-    "Diagnostic maturité DAMA-DMBOK — 8 domaines · Score 1.0 → 4.0/5",
-    "Framework Gouvernance — RACI · Politiques · Comité DG · 6 rôles data",
-    "Data Catalog — Glossaire 30 termes · 21 datasets Snowflake certifiés",
-    "Data Quality — 4 KPIs · BCBS 239 14 principes · Plans de remédiation",
-    "Data Lineage SVG — 20 systèmes · 21 flux · Coverage 0% → 100%",
-    "IA Governance — Registre 5 modèles · EU AI Act · Drift monitoring",
-    "Rapport Comex — Budget 2.4M€ · ROI 3.2x · Synthèse exécutive",
-    "Sélecteur 6 phases — évolution dynamique de toutes les métriques"],
+    num: "01",
+    title: "REGARD ,  Copilote IA de conformité",
+    subtitle: "Agent IA branchée sur la donnée régulée réelle",
+    description: "Système IA agentique de conformité : pipeline RAG déterministe-first, orchestration LangGraph, multi-LLM (Groq Llama 3.3 70B + Gemini 2.0 Flash), autocontrôle LLM-juge, refus motivés avec journal d'audit, observabilité Langfuse. 28/28 cas de test validés. Architecture donnée brute vers gold vers réponse gouvernée.",
+    tags: ["LangGraph", "RAG", "Groq", "Gemini", "LLMOps", "Langfuse", "Next.js", "DuckDB-WASM"],
+    href: "https://regard-wine.vercel.app/",
+    external: true,
+    color: "var(--accent-rose)",
+    year: "2026",
+    metier: "IA & Agents",
   },
   {
-    title: "Finance Digital Audit Dashboard — CAC40",
-    period: "Avr 2026",
-    tags: ["Data Engineering", "Machine Learning", "FastAPI", "Next.js", "Python", "Plotly", "CI/CD"],
-    color: "#6366f1",
-    url: "https://finance-audit-dashboard.vercel.app/",
-    desc: "Pipeline data end-to-end sur 10 entreprises du CAC40 : ingestion automatisée via API financière (yfinance), ETL Python, détection d'anomalies financières par Isolation Forest (scikit-learn), dashboard interactif Next.js/Plotly et génération automatique de rapports PDF d'audit. Déployé en production avec CI/CD GitHub Actions.",
-    deliverables: ["Pipeline ETL Python — 10 entreprises CAC40", "Modèle ML Isolation Forest — 8 ratios financiers", "Dashboard 3 vues : P&L, Anomalies, Comparaison", "API REST FastAPI — 5 endpoints", "Export PDF automatique", "CI/CD GitHub Actions + Render + Vercel"],
-  },
-  {
-    title: "BCBS239 Data Governance — Cadre réglementaire bancaire",
-    period: "Fév 2026",
-    tags: ["BCBS239", "Data Governance", "Finance", "Reporting"],
-    color: "var(--accent-purple)",
-    url: "https://bcbs239-data-governance.vercel.app/",
-    desc: "Réalisation d'un diagnostic complet du dispositif data avec une approche orientée pilotage financier et performance métier. Analyse des écarts de gouvernance et de conformité, structuration du cadre data : data lineage, définition des rôles (Data Owner / Steward) et mise en place de contrôles.",
-    deliverables: ["Diagnostic data complet", "Data lineage documenté", "Rôles Data Owner/Steward", "Contrôles de conformité"],
-  },
-  {
-    title: "Customer Experience Intelligence — Analyse & Data Visualisation",
-    period: "Fév 2026",
-    tags: ["Power BI", "KPI", "Data Viz", "Analyse clients"],
-    color: "var(--accent-coral)",
-    url: "https://github.com/heykelh/customer-experience-intelligence",
-    desc: "Analyse de données clients pour identifier insights, tendances et anomalies impactant la performance. Conception de dashboards interactifs Power BI et mise en place de KPI pour le pilotage métier. Restitution de visualisations claires et exploitables afin d'aider à la prise de décision.",
-    deliverables: ["Dashboards Power BI", "KPI métier", "Analyse des tendances", "Rapport d'insights"],
-  },
-  {
-    title: "Programme de Gouvernance des Données Critiques",
-    period: "Fév 2026",
-    tags: ["Data Governance", "RACI", "Data Quality", "Feuille de route"],
-    color: "var(--accent-amber)",
-    url: "https://www.canva.com/design/DAHBNgAQtnw/view",
-    desc: "Conception et déploiement d'un cadre de gouvernance Data sur un périmètre critique (incidents & performance). Diagnostic de maturité Data & IA, modèle de gouvernance fédéré à l'échelle transverse, formalisation des rôles avec matrice RACI, cadre Data Quality avec KPI et SLA, feuille de route Data priorisée.",
-    deliverables: ["Diagnostic maturité Data & IA", "Matrice RACI complète", "Cadre Data Quality (KPI/SLA)", "Feuille de route priorisée"],
-  },
-  {
-    title: "AI for Kuala Lumpur — Data & IA Decision Platform",
-    period: "Mar 2026",
-    tags: ["IA", "Data urbaine", "Pipeline", "Prédictif"],
+    num: "02",
+    title: "Audit & Gouvernance Data ,  Cadre BCBS239",
+    subtitle: "Diagnostic du dispositif data orienté pilotage financier",
+    description: "Diagnostic complet du dispositif data avec approche orientée pilotage financier et performance métier. Analyse des écarts de gouvernance et de conformité, structuration du cadre data : data lineage, définition des rôles (Data Owner / Steward) et mise en place de contrôles. 0% à 100% conformité BCBS239.",
+    tags: ["BCBS239", "Data Governance", "Data Lineage", "Conformité"],
+    href: "https://bcbs239-data-governance.vercel.app/",
+    external: true,
     color: "var(--accent)",
-    url: "https://ai-for-kuala-lumpur.netlify.app/",
-    desc: "Conception d'une plateforme data permettant d'analyser des données urbaines complexes afin de faciliter la prise de décision stratégique. Collecte, structuration et exploitation de données multi-sources (API, datasets ouverts) avec une logique de pipeline data automatisé. Implémentation de cas d'usage IA (analyse prédictive, génération d'insights).",
-    deliverables: ["Plateforme data urbaine", "Pipeline multi-sources", "Analyse prédictive", "Dashboard décisionnel"],
+    year: "2026",
+    metier: "Data Governance",
   },
   {
-    title: "CryptoBot — Data Engineering Pipeline",
-    period: "Oct 2025",
-    tags: ["Python", "SQL", "ETL", "API", "Temps réel"],
-    color: "var(--accent-blue)",
-    url: "https://www.canva.com/design/DAG1I0Dd_a4/view",
-    desc: "Conception d'un pipeline data complet (API → ingestion → stockage SQL → visualisation) permettant l'exploitation de données en quasi temps réel. Nettoyage, transformation et structuration des données pour garantir leur qualité, cohérence et exploitabilité. Développement d'indicateurs exploitables pour le suivi de performance.",
-    deliverables: ["Pipeline API → SQL", "Ingestion temps réel", "Nettoyage & transformation", "Indicateurs de performance"],
+    num: "03",
+    title: "FrontierBank ,  Mission Consulting Data",
+    subtitle: "Simulation complète d'une mission de conseil 12 mois",
+    description: "Pilotage complet d'un programme de transformation data en contexte BCE / BCBS239 : diagnostic DAMA-DMBOK (8 domaines), cadre de gouvernance, data catalog avec glossaire certifié, data quality KPI, data lineage graphe, AI governance EU AI Act, rapport Comex avec budget et ROI.",
+    tags: ["BCBS239", "DAMA-DMBOK", "Data Catalog", "EU AI Act", "Comex"],
+    href: "https://frontierbank-data.vercel.app/",
+    external: true,
+    color: "var(--accent-purple)",
+    year: "2026",
+    metier: "Data Consulting",
+  },
+  {
+    num: "04",
+    title: "Finance Audit Dashboard ,  CAC40",
+    subtitle: "Détection automatique d'anomalies financières par ML",
+    description: "Analyse automatisée de 10 entreprises du CAC40 sur 5 ans de données réelles Yahoo Finance. Pipeline ETL Python, modèle ML Isolation Forest (scoring 0-100), API FastAPI 4 endpoints, dashboard Next.js avec graphiques Plotly interactifs. De plusieurs semaines d'analyse manuelle à 10 secondes.",
+    tags: ["Python", "scikit-learn", "FastAPI", "Next.js", "Plotly", "yfinance"],
+    href: "https://finance-audit-dashboard.vercel.app/",
+    external: true,
+    color: "var(--accent-coral)",
+    year: "2026",
+    metier: "Data Analyst",
+  },
+  {
+    num: "05",
+    title: "Customer Experience Intelligence",
+    subtitle: "Analyse & Data Visualisation",
+    description: "Analyse de données clients pour identifier insights, tendances et anomalies impactant la performance. Conception de dashboards interactifs Power BI et mise en place de KPI pour le pilotage métier. 5 KPI automatisés, 3 segments clients identifiés, délai de rapport réduit à moins d'une journée.",
+    tags: ["Power BI", "Data Analysis", "KPI", "Dashboard"],
+    href: "https://github.com/heykelh/customer-experience-intelligence",
+    external: true,
+    color: "var(--accent-amber)",
+    year: "2026",
+    metier: "Data Analyst",
+  },
+  {
+    num: "06",
+    title: "Programme de Gouvernance des Données Critiques",
+    subtitle: "Framework complet sur un périmètre incidents & performance",
+    description: "Conception et déploiement d'un cadre de gouvernance Data complet. Diagnostic de maturité Data & IA, modèle de gouvernance fédéré, formalisation des rôles Data avec matrice RACI, cadre Data Quality (KPI, SLA, contrôles), processus de gestion des incidents Data et feuille de route priorisée sur 18 mois.",
+    tags: ["Data Governance", "RACI", "Data Quality", "Roadmap", "Maturité"],
+    href: "https://www.canva.com/design/DAHBNgAQtnw/Ru9E56mpd2qyDSzXKGhMIw/view",
+    external: true,
+    color: "var(--accent)",
+    year: "2026",
+    metier: "Data Governance",
+  },
+  {
+    num: "07",
+    title: "Naomi Data Steward Lab",
+    subtitle: "Simulation du rôle Data Steward sur l'écosystème SNCF",
+    description: "Simulation pédagogique du rôle de Data Steward sur l'écosystème Naomi de SNCF Voyageurs. Données ouvertes réelles, catalogue de données avec fiches par dataset, glossaire métier, règles de qualité et processus de remédiation.",
+    tags: ["Data Stewardship", "Data Catalog", "DAMA-DMBOK", "Open Data SNCF"],
+    href: "https://naomi-data-steward.vercel.app/",
+    external: true,
+    color: "var(--accent-purple)",
+    year: "2026",
+    metier: "Data Steward",
+  },
+  {
+    num: "08",
+    title: "AI for Kuala Lumpur",
+    subtitle: "Data & IA Decision Platform ,  cas d'usage urbain",
+    description: "Plateforme data multi-sources permettant d'analyser des données urbaines complexes pour faciliter la prise de décision stratégique. Pipeline data automatisé, 3 cas d'usage IA implémentés, 100% données réelles, génération d'insights en moins de 5 minutes.",
+    tags: ["IA", "Data Platform", "API", "Pipeline", "Décision"],
+    href: "https://ai-for-kuala-lumpur.netlify.app/",
+    external: true,
+    color: "var(--accent-rose)",
+    year: "2026",
+    metier: "IA & Agents",
+  },
+  {
+    num: "09",
+    title: "CryptoBot ,  Data Engineering",
+    subtitle: "Pipeline data temps réel & visualisation",
+    description: "Pipeline data complet API vers ingestion vers stockage SQL vers visualisation. Délai d'ingestion inférieur à 60 secondes. 5 KPI de performance calculés automatiquement (prix, volume, volatilité, tendance, momentum) et mis à jour en continu.",
+    tags: ["ETL", "SQL", "API", "Pipeline", "Data Engineering"],
+    href: "https://www.canva.com/design/DAG1I0Dd_a4/p3QvJvqgTTjs9Dek5_j0Lw/edit",
+    external: true,
+    color: "var(--accent-amber)",
+    year: "2025",
+    metier: "Data Engineering",
   },
 ];
+
+const metierColors: Record<string, string> = {
+  "IA & Agents": "var(--accent-rose)",
+  "Data Governance": "var(--accent)",
+  "Data Consulting": "var(--accent-purple)",
+  "Data Analyst": "var(--accent-coral)",
+  "Data Engineering": "var(--accent-amber)",
+  "Data Steward": "var(--accent-purple)",
+};
 
 export default function ProjetsPage() {
   return (
@@ -108,73 +128,60 @@ export default function ProjetsPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 12 }}>Portfolio</p>
           <h1 style={{ fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 800, marginBottom: 16 }}>
-            Autres projets
+            9 projets réalisés
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: 16, maxWidth: 600, lineHeight: 1.7 }}>
-            Projets réalisés en solo. Ils contiennent principalement pipelines data, data visualisation,
-            gouvernance appliquée et intelligence artificielle.
+            Data Governance, Data Consulting, Data Engineering, Data Analyst, IA & Agents. Chaque projet répond à un enjeu business réel avec des livrables opérationnels.
           </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 20 }}>
+            {Object.entries(metierColors).map(([m, c]) => (
+              <span key={m} style={{ fontSize: 11, padding: "3px 10px", borderRadius: 99, fontWeight: 500, background: `color-mix(in srgb, ${c} 12%, transparent)`, color: c, border: `1px solid color-mix(in srgb, ${c} 25%, transparent)` }}>{m}</span>
+            ))}
+          </div>
         </div>
       </section>
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px", display: "flex", flexDirection: "column", gap: 20 }}>
-        {projects.map((p, i) => (
-          <div key={i} style={{
-            background: "var(--bg-card)", border: "1px solid var(--border)",
-            borderRadius: 16, padding: "28px 32px",
-            borderLeft: `3px solid ${p.color}`,
-          }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 16, flexWrap: "wrap", marginBottom: 14 }}>
-              <div style={{ flex: 1 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8, flexWrap: "wrap" }}>
-                  <h2 style={{ fontSize: 17, fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>{p.title}</h2>
-                  <span style={{ fontSize: 11, color: "var(--text-tertiary)", whiteSpace: "nowrap" }}>{p.period}</span>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px", display: "flex", flexDirection: "column", gap: 16 }}>
+        {projects.map((p) => {
+          const mc = metierColors[p.metier] || "var(--accent)";
+          return (
+            <div key={p.num} style={{
+              background: "var(--bg-card)", border: "1px solid var(--border)",
+              borderRadius: 14, padding: "24px 28px",
+              borderLeft: `3px solid ${mc}`,
+            }}>
+              <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
+                <div style={{ flex: 1, minWidth: 260 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+                    <span style={{ width: 26, height: 26, borderRadius: 6, fontSize: 11, fontWeight: 700, background: `color-mix(in srgb, ${mc} 15%, transparent)`, color: mc, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-display)" }}>{p.num}</span>
+                    <span style={{ fontSize: 11, padding: "2px 8px", borderRadius: 99, background: `color-mix(in srgb, ${mc} 10%, transparent)`, color: mc, fontWeight: 500 }}>{p.metier}</span>
+                    <span style={{ fontSize: 11, color: "var(--text-tertiary)" }}>{p.year}</span>
+                  </div>
+                  <h2 style={{ fontSize: 17, fontWeight: 700, color: "var(--text-primary)", marginBottom: 4 }}>{p.title}</h2>
+                  <p style={{ fontSize: 13, color: mc, fontWeight: 500, marginBottom: 10 }}>{p.subtitle}</p>
+                  <p style={{ fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.65, marginBottom: 14, maxWidth: 680 }}>{p.description}</p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
+                    {p.tags.map(t => (
+                      <span key={t} style={{ fontSize: 11, padding: "2px 8px", borderRadius: 99, background: `color-mix(in srgb, ${mc} 8%, transparent)`, color: mc, fontWeight: 500 }}>{t}</span>
+                    ))}
+                  </div>
                 </div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                  {p.tags.map(t => (
-                    <span key={t} style={{
-                      fontSize: 11, padding: "3px 9px", borderRadius: 99,
-                      background: `color-mix(in srgb, ${p.color} 12%, transparent)`,
-                      color: p.color, fontWeight: 500,
-                    }}>{t}</span>
-                  ))}
-                </div>
-              </div>
-              {p.url && (
-                <a href={p.url} target="_blank" rel="noreferrer" style={{
-                  display: "flex", alignItems: "center", gap: 6, flexShrink: 0,
-                  padding: "7px 14px", borderRadius: 8, fontSize: 12, fontWeight: 500,
-                  background: "var(--bg-surface)", border: "1px solid var(--border)",
-                  color: "var(--text-secondary)", textDecoration: "none",
+                <a href={p.href} target="_blank" rel="noreferrer" style={{
+                  display: "inline-flex", alignItems: "center", gap: 6, flexShrink: 0,
+                  padding: "9px 16px", borderRadius: 8, fontSize: 12, fontWeight: 500,
+                  background: `color-mix(in srgb, ${mc} 10%, transparent)`,
+                  border: `1px solid color-mix(in srgb, ${mc} 25%, transparent)`,
+                  color: mc, textDecoration: "none",
                 }}>
                   Voir le projet
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 </a>
-              )}
-            </div>
-
-            <p style={{ fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.7, marginBottom: 16 }}>{p.desc}</p>
-
-            <div style={{ borderTop: "1px solid var(--border)", paddingTop: 14 }}>
-              <p style={{ fontSize: 11, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 10 }}>Livrables clés</p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {p.deliverables.map(d => (
-                  <span key={d} style={{
-                    display: "flex", alignItems: "center", gap: 5,
-                    fontSize: 12, padding: "4px 10px", borderRadius: 6,
-                    background: "var(--bg-surface)", border: "1px solid var(--border)",
-                    color: "var(--text-secondary)",
-                  }}>
-                    <span style={{ width: 4, height: 4, borderRadius: "50%", background: p.color, flexShrink: 0 }} />
-                    {d}
-                  </span>
-                ))}
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

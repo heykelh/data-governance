@@ -73,10 +73,10 @@ const raci = [
 ];
 
 const roadmap = [
-  { phase: "Phase 1 — J0 à J+30", title: "Diagnostic & cartographie", actions: ["Inventaire exhaustif des traitements", "Constitution du registre Art. 30", "Identification des traitements à risque élevé", "Audit des contrats sous-traitants existants"], color: "var(--accent-coral)" },
-  { phase: "Phase 2 — J+30 à J+60", title: "Mise en conformité prioritaire", actions: ["DPIA sur les traitements critiques identifiés", "Mise à jour des politiques de confidentialité", "Implémentation des procédures droits des personnes", "Revue et signature des DPA sous-traitants"], color: "var(--accent-amber)" },
-  { phase: "Phase 3 — J+60 à J+90", title: "Consolidation & outillage", actions: ["Déploiement d'un outil de gestion du consentement (CMP)", "Automatisation des suppressions selon durées de conservation", "Formation de l'ensemble des collaborateurs", "Mise en place d'une procédure violation de données"], color: "var(--accent)" },
-  { phase: "Phase 4 — J+90 à J+180", title: "Pilotage continu", actions: ["Tableau de bord de conformité RGPD", "Audits périodiques sous-traitants", "Veille réglementaire (délibérations CNIL)", "Revue annuelle du registre et des DPIA"], color: "var(--accent-purple)" },
+  { phase: "Phase 1 ,  J0 à J+30", title: "Diagnostic & cartographie", actions: ["Inventaire exhaustif des traitements", "Constitution du registre Art. 30", "Identification des traitements à risque élevé", "Audit des contrats sous-traitants existants"], color: "var(--accent-coral)" },
+  { phase: "Phase 2 ,  J+30 à J+60", title: "Mise en conformité prioritaire", actions: ["DPIA sur les traitements critiques identifiés", "Mise à jour des politiques de confidentialité", "Implémentation des procédures droits des personnes", "Revue et signature des DPA sous-traitants"], color: "var(--accent-amber)" },
+  { phase: "Phase 3 ,  J+60 à J+90", title: "Consolidation & outillage", actions: ["Déploiement d'un outil de gestion du consentement (CMP)", "Automatisation des suppressions selon durées de conservation", "Formation de l'ensemble des collaborateurs", "Mise en place d'une procédure violation de données"], color: "var(--accent)" },
+  { phase: "Phase 4 ,  J+90 à J+180", title: "Pilotage continu", actions: ["Tableau de bord de conformité RGPD", "Audits périodiques sous-traitants", "Veille réglementaire (délibérations CNIL)", "Revue annuelle du registre et des DPIA"], color: "var(--accent-purple)" },
 ];
 
 export default function RGPDPage() {
@@ -111,7 +111,7 @@ export default function RGPDPage() {
 
         {/* Diagnostic */}
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Outil de diagnostic — 30 questions</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Outil de diagnostic ,  30 questions</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 24 }}>
             Évaluation structurée en 5 thèmes. Chaque question permet d'identifier précisément les gaps de conformité
             et de prioriser les actions correctives. Réponse : Oui (2pts) / Partiel (1pt) / Non (0pt).
@@ -141,9 +141,9 @@ export default function RGPDPage() {
 
         {/* RACI */}
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Modèle de gouvernance RGPD — Rôles & responsabilités</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Modèle de gouvernance RGPD ,  Rôles & responsabilités</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>
-            La conformité RGPD n'est pas un projet IT — c'est une responsabilité partagée entre le métier, le juridique, la DSI et la direction.
+            La conformité RGPD n'est pas un projet IT ,  c'est une responsabilité partagée entre le métier, le juridique, la DSI et la direction.
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {raci.map((r, i) => (
@@ -159,7 +159,7 @@ export default function RGPDPage() {
 
         {/* Roadmap */}
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Roadmap de mise en conformité — 6 mois</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Roadmap de mise en conformité ,  6 mois</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>
             Plan opérationnel priorisé pour une organisation partant de zéro ou d'une conformité partielle.
           </p>

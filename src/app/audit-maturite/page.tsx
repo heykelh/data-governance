@@ -53,7 +53,7 @@ export default function AuditMaturitePage() {
         </section>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Modèle de maturité — 5 niveaux</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Modèle de maturité ,  5 niveaux</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>Inspiré du CMMI (Capability Maturity Model Integration) et adapté aux enjeux Data & IA.</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {levels.map(l => (
@@ -71,7 +71,7 @@ export default function AuditMaturitePage() {
         </section>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Framework d'évaluation — 6 axes, 30 questions</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Framework d'évaluation ,  6 axes, 30 questions</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>Chaque axe comporte 5 questions évaluées sur une échelle de 1 à 5. Score maximum par axe : 25 points.</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             {axes.map((axe, i) => (
@@ -98,7 +98,7 @@ export default function AuditMaturitePage() {
 
         <section>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Benchmark sectoriel</h2>
-          <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>Scores moyens observés par secteur sur les 6 axes — base de comparaison pour positionner votre organisation.</p>
+          <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>Scores moyens observés par secteur sur les 6 axes ,  base de comparaison pour positionner votre organisation.</p>
           <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>

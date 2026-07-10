@@ -11,7 +11,7 @@ const kpis = [
   { name: "Taux de complétude des données sinistres", target: "≥ 99%", axe: "Complétude", color: "var(--accent-purple)", desc: "Part des dossiers sinistres avec l'ensemble des champs obligatoires renseignés" },
   { name: "Délai de mise à jour des données actifs", target: "≤ J+1", axe: "Actualité", color: "var(--accent-coral)", desc: "Fraîcheur maximale des données de valorisation du portefeuille d'actifs" },
   { name: "Taux de cohérence inter-systèmes", target: "≥ 98%", axe: "Cohérence", color: "var(--accent-amber)", desc: "Concordance des données entre le système de gestion, la compta et le datawarehouse" },
-  { name: "Taux d'unicité des contrats", target: "100%", axe: "Unicité", color: "var(--accent)", desc: "Absence de doublons dans le référentiel contrats — critique pour le calcul des provisions" },
+  { name: "Taux d'unicité des contrats", target: "100%", axe: "Unicité", color: "var(--accent)", desc: "Absence de doublons dans le référentiel contrats ,  critique pour le calcul des provisions" },
   { name: "Exactitude du calcul SCR", target: "< 0.1% d'écart", axe: "Exactitude", color: "var(--accent-blue)", desc: "Écart maximum toléré entre calcul automatique et validation actuarielle" },
   { name: "Couverture du data lineage", target: "100% données SCR", axe: "Traçabilité", color: "var(--accent-purple)", desc: "Traçabilité documentée de toutes les données entrant dans le calcul du SCR" },
   { name: "Délai de production des QRT", target: "≤ 20 semaines", axe: "Disponibilité", color: "var(--accent-coral)", desc: "Délai de production des tableaux quantitatifs réglementaires après clôture" },
@@ -20,9 +20,9 @@ const kpis = [
 
 const roles = [
   { role: "Chief Data Officer (CDO)", resp: "Pilote la stratégie data pour la conformité Solvency II. Responsable devant le COMEX de la qualité et de la disponibilité des données réglementaires.", scope: "Groupe" },
-  { role: "Data Owner — Actuariat", resp: "Responsable de la qualité des données de provisions techniques, sinistres et hypothèses actuarielles. Valide les règles de gestion et les données d'entrée des modèles.", scope: "Direction technique" },
-  { role: "Data Owner — Finance", resp: "Responsable des données de valorisation des actifs, de la comptabilité et des fonds propres. Garant de la cohérence entre IFRS et Solvency II.", scope: "Direction financière" },
-  { role: "Data Steward — IT", resp: "Implémente les contrôles de qualité, gère le data lineage, maintient les pipelines de données réglementaires et documente les flux.", scope: "DSI" },
+  { role: "Data Owner ,  Actuariat", resp: "Responsable de la qualité des données de provisions techniques, sinistres et hypothèses actuarielles. Valide les règles de gestion et les données d'entrée des modèles.", scope: "Direction technique" },
+  { role: "Data Owner ,  Finance", resp: "Responsable des données de valorisation des actifs, de la comptabilité et des fonds propres. Garant de la cohérence entre IFRS et Solvency II.", scope: "Direction financière" },
+  { role: "Data Steward ,  IT", resp: "Implémente les contrôles de qualité, gère le data lineage, maintient les pipelines de données réglementaires et documente les flux.", scope: "DSI" },
   { role: "Fonction actuarielle", resp: "Valide les modèles et les données d'entrée. Émet un avis formel sur la fiabilité des provisions. Interlocuteur privilégié de l'ACPR.", scope: "Direction technique" },
   { role: "Audit interne", resp: "Évalue l'efficacité du dispositif de gouvernance des données. Contrôle la conformité aux politiques internes et aux exigences Solvency II Pilier II.", scope: "Groupe" },
 ];
@@ -42,7 +42,7 @@ export default function SolvencyIIPage() {
       <div style={{ display: "flex", flexDirection: "column", gap: 64 }}>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16 }}>Contexte réglementaire — Solvency II</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16 }}>Contexte réglementaire ,  Solvency II</h2>
           <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, padding: "20px 24px", borderLeft: "3px solid var(--accent-purple)", marginBottom: 16 }}>
             <p style={{ fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.75 }}>
               Solvency II (Directive 2009/138/CE, révisée par Omnibus II) est le cadre prudentiel européen applicable aux
@@ -50,7 +50,7 @@ export default function SolvencyIIPage() {
               européenne en matière de capital, de gouvernance et de reporting. L'ACPR (Autorité de Contrôle Prudentiel et de
               Résolution) est l'autorité de supervision en France. Une donnée erronée dans le calcul du SCR peut conduire à
               une sous-évaluation du capital requis, exposant l'assureur à un risque de non-conformité réglementaire.
-              <strong style={{ color: "var(--accent-purple)" }}> La qualité des données n'est pas un sujet IT — c'est une obligation réglementaire.</strong>
+              <strong style={{ color: "var(--accent-purple)" }}> La qualité des données n'est pas un sujet IT ,  c'est une obligation réglementaire.</strong>
             </p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }} className="three-col">
@@ -70,7 +70,7 @@ export default function SolvencyIIPage() {
         </section>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Data Lineage — Flux de données réglementaires</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Data Lineage ,  Flux de données réglementaires</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>
             Traçabilité bout-en-bout des données entrant dans le calcul du SCR. Exigence explicite du Pilier II
             et de la politique de données ACPR.
@@ -101,7 +101,7 @@ export default function SolvencyIIPage() {
         </section>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>15 KPI de qualité des données — Données critiques Solvency II</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>15 KPI de qualité des données ,  Données critiques Solvency II</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>
             Indicateurs de qualité définis selon les 7 dimensions DAMA, appliqués aux données entrant dans
             le calcul du SCR, des provisions techniques et du reporting réglementaire.
@@ -121,7 +121,7 @@ export default function SolvencyIIPage() {
         </section>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Modèle de gouvernance — Rôles & responsabilités</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Modèle de gouvernance ,  Rôles & responsabilités</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>
             Organisation type pour un assureur de taille intermédiaire (1-5 Mds€ de primes), conforme aux
             exigences du Pilier II de Solvency II.

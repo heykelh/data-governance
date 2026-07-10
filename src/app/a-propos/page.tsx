@@ -34,14 +34,14 @@ const projets = [
   { title: "AI for Kuala Lumpur", href: "https://ai-for-kuala-lumpur.netlify.app/", tag: "Live", color: "var(--accent-amber)" },
   { title: "Customer Experience Intelligence", href: "https://github.com/heykelh/customer-experience-intelligence", tag: "GitHub", color: "var(--accent-coral)" },
   { title: "Programme Gouvernance Données Critiques", href: "https://www.canva.com/design/DAHBNgAQtnw/Ru9E56mpd2qyDSzXKGhMIw/view", tag: "Livrable", color: "var(--accent)" },
-  { title: "CryptoBot — Pipeline temps réel", href: "https://www.canva.com/design/DAG1I0Dd_a4/p3QvJvqgTTjs9Dek5_j0Lw/edit", tag: "Livrable", color: "var(--accent-amber)" },
+  { title: "CryptoBot ,  Pipeline temps réel", href: "https://www.canva.com/design/DAG1I0Dd_a4/p3QvJvqgTTjs9Dek5_j0Lw/edit", tag: "Livrable", color: "var(--accent-amber)" },
 ];
 
 const formations = [
   {
     period: "Fév 2026",
     title: "Master Data Engineer / Data Product Manager (Bac+5)",
-    org: "École des Mines — Datascientest / Liora",
+    org: "École des Mines ,  Datascientest / Liora",
     color: "var(--accent-purple)",
   },
   {
@@ -71,10 +71,10 @@ export default function AProposPage() {
               </p>
 
               <p style={{ fontSize: 15, color: "var(--text-secondary)", lineHeight: 1.8, marginBottom: 16 }}>
-                Je conçois et structure les dispositifs de gouvernance des données — des rôles aux référentiels, du diagnostic aux feuilles de route. Je construis aussi les pipelines et les outils qui rendent la donnée exploitable au quotidien.
+                Je conçois et structure les dispositifs de gouvernance des données ,  des rôles aux référentiels, du diagnostic aux feuilles de route. Je construis aussi les pipelines et les outils qui rendent la donnée exploitable au quotidien.
               </p>
               <p style={{ fontSize: 15, color: "var(--text-secondary)", lineHeight: 1.8, marginBottom: 28 }}>
-                Mon ancrage : 10 ans dans des environnements ferroviaires critiques où la fiabilité de l'information n'est pas optionnelle. Ce contexte forge une approche de la donnée orientée rigueur, responsabilité et impact opérationnel concret — exactement ce dont les organisations réglementées ont besoin.
+                Mon ancrage : 10 ans dans des environnements ferroviaires critiques où la fiabilité de l'information n'est pas optionnelle. Ce contexte forge une approche de la donnée orientée rigueur, responsabilité et impact opérationnel concret ,  exactement ce dont les organisations réglementées ont besoin.
               </p>
 
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
@@ -90,7 +90,7 @@ export default function AProposPage() {
                 <p style={{ fontSize: 11, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 14 }}>Informations</p>
                 {[
                   { label: "Localisation", value: "Paris, Île-de-France" },
-                  { label: "Formation", value: "Master Data Engineer — École des Mines" },
+                  { label: "Formation", value: "Master Data Engineer ,  École des Mines" },
                   { label: "Spécialités", value: "Data Governance · AI Compliance · Engineering" },
                   { label: "Secteurs cibles", value: "Banque · Assurance · Infrastructure · Conseil" },
                   { label: "Email", value: "heykelhachiche@gmail.com" },

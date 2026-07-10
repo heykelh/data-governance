@@ -31,7 +31,7 @@ const testScenarios = [
   { id: "TS-03", module: "Onboarding", cas: "Client déjà KYC", donnees: "Client existant avec KYC valide < 2 ans", attendu: "Alerte 'KYC existant', proposition de mise à jour", priorite: "P2", statut: "OK" },
   { id: "TS-04", module: "Vérification OCR", cas: "Lecture document nominal", donnees: "PDF lisible, données cohérentes", attendu: "Pré-remplissage formulaire à 95%+, score confiance > 0.9", priorite: "P1", statut: "OK" },
   { id: "TS-05", module: "Vérification OCR", cas: "Document illisible", donnees: "Photo floue ou trop sombre", attendu: "Score confiance < 0.5, demande de rescan automatique", priorite: "P1", statut: "OK" },
-  { id: "TS-06", module: "Vérification OCR", cas: "Document falsifié (simulation)", donnees: "Document avec métadonnées modifiées", attendu: "Flag 'Document suspect', escalade Compliance", priorite: "P1", statut: "KO — à corriger" },
+  { id: "TS-06", module: "Vérification OCR", cas: "Document falsifié (simulation)", donnees: "Document avec métadonnées modifiées", attendu: "Flag 'Document suspect', escalade Compliance", priorite: "P1", statut: "KO ,  à corriger" },
   { id: "TS-07", module: "Scoring risque", cas: "Client faible risque", donnees: "Particulier, revenus stables, pas de PPE", attendu: "Score < 30, validation automatique", priorite: "P1", statut: "OK" },
   { id: "TS-08", module: "Scoring risque", cas: "Client PPE (Personne Politiquement Exposée)", donnees: "Flag PPE actif dans référentiel", attendu: "Score > 80, escalade obligatoire RCCI", priorite: "P1", statut: "OK" },
   { id: "TS-09", module: "Scoring risque", cas: "Pays à risque élevé", donnees: "Adresse fiscale dans pays GAFI liste noire", attendu: "Blocage automatique, alerte Compliance", priorite: "P1", statut: "OK" },
@@ -55,7 +55,7 @@ const testScenarios = [
 const dataLineage = [
   { step: 1, label: "Source Client", detail: "Portail web / Agence", type: "source", icon: "👤", owner: "Digital Factory", quality: 92 },
   { step: 2, label: "Ingestion & Validation", detail: "API Gateway + OCR Engine", type: "process", icon: "⚙️", owner: "DSI Middleware", quality: 95 },
-  { step: 3, label: "Référentiel Tiers", detail: "MDM Client — données canoniques", type: "store", icon: "🗄️", owner: "Data Owner : CDO", quality: 98 },
+  { step: 3, label: "Référentiel Tiers", detail: "MDM Client ,  données canoniques", type: "store", icon: "🗄️", owner: "Data Owner : CDO", quality: 98 },
   { step: 4, label: "Moteur de Scoring", detail: "Règles LCB-FT + ML Risk Score", type: "process", icon: "🧮", owner: "Risk & Compliance", quality: 96 },
   { step: 5, label: "Dossier KYC validé", detail: "GED + Base Conformité", type: "store", icon: "✅", owner: "Data Owner : RCCI", quality: 99 },
   { step: 6, label: "Core Banking System", detail: "Propagation statut KYC_VALID", type: "target", icon: "🏦", owner: "DSI Core", quality: 99 },
@@ -96,7 +96,7 @@ const statusColors: Record<string, { bg: string; color: string; label: string }>
 
 const testStatusColors: Record<string, { bg: string; color: string }> = {
   "OK": { bg: "#d1fae5", color: "#065f46" },
-  "KO — à corriger": { bg: "#fee2e2", color: "#991b1b" },
+  "KO ,  à corriger": { bg: "#fee2e2", color: "#991b1b" },
   "En cours": { bg: "#fef3c7", color: "#92400e" },
 };
 
@@ -172,7 +172,7 @@ export default function KycBnpPage() {
                 KYC Digital Transformation
               </h1>
               <p style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.65, maxWidth: 620, margin: 0 }}>
-                Mission BA complète simulée pour BNP Paribas Banque de Détail — modernisation du parcours KYC retail de bout en bout : de l'analyse des besoins métier au déploiement, avec cadre de Data Gouvernance intégré.
+                Mission BA complète simulée pour BNP Paribas Banque de Détail ,  modernisation du parcours KYC retail de bout en bout : de l'analyse des besoins métier au déploiement, avec cadre de Data Gouvernance intégré.
               </p>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -218,10 +218,10 @@ export default function KycBnpPage() {
               <Card>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
                   {[
-                    { label: "Entité", val: "BNP Paribas — Banque de Détail France" },
+                    { label: "Entité", val: "BNP Paribas ,  Banque de Détail France" },
                     { label: "Périmètre SI", val: "CRM, Core Banking, GED, Portail Client, MDM Tiers" },
                     { label: "Enjeu réglementaire", val: "LCB-FT 5e directive, RGPD Art. 25, BCBS239" },
-                    { label: "Problème initial", val: "80% du processus manuel — 45 min/dossier en moyenne" },
+                    { label: "Problème initial", val: "80% du processus manuel ,  45 min/dossier en moyenne" },
                     { label: "Objectif", val: "KYC digital automatisé < 15 min, 0 ressaisie, traçabilité totale" },
                     { label: "Rôle BA", val: "Point de contact unique Métier ↔ IT sur le périmètre fonctionnel" },
                   ].map(item => (
@@ -235,7 +235,7 @@ export default function KycBnpPage() {
             </div>
 
             <div>
-              <SectionTitle sub="6 phases couvrant le cycle complet d'une mission Business Analyst">Plan de mission — 14 jours</SectionTitle>
+              <SectionTitle sub="6 phases couvrant le cycle complet d'une mission Business Analyst">Plan de mission ,  14 jours</SectionTitle>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 {phases.map((p, i) => (
                   <div key={p.num} style={{ display: "flex", alignItems: "flex-start", gap: 16, padding: 20, background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, borderLeft: `4px solid ${p.color}` }}>
@@ -260,7 +260,7 @@ export default function KycBnpPage() {
                   { label: "Process map AS-IS (BPMN)", icon: "🗺️" },
                   { label: "Process map TO-BE", icon: "🎯" },
                   { label: "18 User Stories BDD", icon: "📝" },
-                  { label: "SFD — 3 modules fonctionnels", icon: "📐" },
+                  { label: "SFD ,  3 modules fonctionnels", icon: "📐" },
                   { label: "Matrice RTM", icon: "🔗" },
                   { label: "24 scénarios UAT", icon: "🧪" },
                   { label: "Data Lineage KYC", icon: "🔄" },
@@ -281,7 +281,7 @@ export default function KycBnpPage() {
         {/* ── USER STORIES ── */}
         {activeTab === "user-stories" && (
           <div>
-            <SectionTitle sub="18 user stories structurées en format BDD (Given/When/Then) avec critères d'acceptance">Backlog produit — User Stories</SectionTitle>
+            <SectionTitle sub="18 user stories structurées en format BDD (Given/When/Then) avec critères d'acceptance">Backlog produit ,  User Stories</SectionTitle>
             <div style={{ display: "flex", gap: 8, marginBottom: 20, flexWrap: "wrap" }}>
               {epics.map(e => (
                 <button key={e} onClick={() => setEpicFilter(e)} style={{
@@ -314,11 +314,11 @@ export default function KycBnpPage() {
         {/* ── TESTS ── */}
         {activeTab === "tests" && (
           <div>
-            <SectionTitle sub="24 scénarios de test fonctionnel et UAT avec critères Go/No-Go">Plan de recette — Scénarios UAT</SectionTitle>
+            <SectionTitle sub="24 scénarios de test fonctionnel et UAT avec critères Go/No-Go">Plan de recette ,  Scénarios UAT</SectionTitle>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 24 }}>
               {[
                 { val: doneCount, label: "Scénarios OK", color: "#10b981" },
-                { val: koCount, label: "KO — À corriger", color: "#ef4444" },
+                { val: koCount, label: "KO ,  À corriger", color: "#ef4444" },
                 { val: inProgressCount, label: "En cours", color: "#f59e0b" },
               ].map(s => (
                 <div key={s.label} style={{ padding: 20, background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, textAlign: "center" }}>
@@ -371,7 +371,7 @@ export default function KycBnpPage() {
         {/* ── DATA LINEAGE ── */}
         {activeTab === "data-lineage" && (
           <div>
-            <SectionTitle sub="Traçabilité complète des données KYC de la source au reporting — Data Owners identifiés">Data Lineage & Gouvernance KYC</SectionTitle>
+            <SectionTitle sub="Traçabilité complète des données KYC de la source au reporting ,  Data Owners identifiés">Data Lineage & Gouvernance KYC</SectionTitle>
             <Card style={{ marginBottom: 24 }}>
               <div style={{ overflowX: "auto", paddingBottom: 8 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 0, minWidth: 800 }}>
@@ -448,7 +448,7 @@ export default function KycBnpPage() {
         {/* ── KPI ── */}
         {activeTab === "kpi" && (
           <div>
-            <SectionTitle sub="Mesure de l'impact business — comparaison avant / après déploiement sur 90 jours">Dashboard KPIs & Impact métier</SectionTitle>
+            <SectionTitle sub="Mesure de l'impact business ,  comparaison avant / après déploiement sur 90 jours">Dashboard KPIs & Impact métier</SectionTitle>
             <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 32 }}>
               {kpiDashboard.map(k => (
                 <div key={k.label} style={{ padding: "20px 24px", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>

@@ -51,12 +51,12 @@ const domains = [
   },
 ];
 
-const contractExample = `# Data Contract — Circulation trains temps réel
+const contractExample = `# Data Contract ,  Circulation trains temps réel
 # Domaine : Exploitation | Version : 2.1.0 | Statut : Actif
 
 metadata:
   id: "dc-exploitation-circulation-v2"
-  name: "Circulation trains — Temps réel"
+  name: "Circulation trains ,  Temps réel"
   domain: "exploitation"
   owner: "data-owner-exploitation@sncf.fr"
   steward: "data-steward-it@sncf.fr"
@@ -143,7 +143,7 @@ export default function DataMeshPage() {
         </section>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Modélisation — 4 domaines SNCF fictifs</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Modélisation ,  4 domaines SNCF fictifs</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>
             Application concrète du Data Mesh à une organisation ferroviaire complexe.
             Chaque domaine est propriétaire de ses data products et responsable de leur qualité.
@@ -187,11 +187,11 @@ export default function DataMeshPage() {
         </section>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Data Contract — Exemple complet</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Data Contract ,  Exemple complet</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>
             Un Data Contract formalise le contrat entre un producteur de données et ses consommateurs.
             Il définit le schéma, les SLA, les règles de qualité et les responsabilités.
-            Format YAML — versionné dans Git comme du code.
+            Format YAML ,  versionné dans Git comme du code.
           </p>
           <div style={{ background: "var(--bg-surface)", border: "1px solid var(--border)", borderRadius: 12, padding: "24px", fontFamily: "var(--font-mono)", fontSize: 12, lineHeight: 1.8, color: "var(--text-secondary)", overflowX: "auto", whiteSpace: "pre" }}>
             {contractExample.split('\n').map((line, i) => {
@@ -206,7 +206,7 @@ export default function DataMeshPage() {
         </section>
 
         <section>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Data Catalog — Inventaire des data products</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Data Catalog ,  Inventaire des data products</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: 14, marginBottom: 20 }}>
             Référentiel centralisé de tous les data products disponibles dans l'organisation.
             Point d'entrée unique pour découvrir, comprendre et consommer les données.
