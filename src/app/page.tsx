@@ -130,7 +130,8 @@ const metiers = [
     reglementaire: [],
     projets: [
       { title: "AI for Kuala Lumpur", desc: "Plateforme data multi-sources (API, open data), pipeline automatisé, cas d'usage IA urbains pour la prise de décision stratégique.", href: "https://ai-for-kuala-lumpur.netlify.app/", tag: "Live" },
-      { title: "CryptoBot ,  Pipeline temps réel", desc: "Pipeline complet API vers ingestion vers stockage SQL vers visualisation. Données crypto en quasi temps réel, indicateurs de performance.", href: "https://www.canva.com/design/DAG1I0Dd_a4/p3QvJvqgTTjs9Dek5_j0Lw/edit", tag: "Livrable" },
+      { title: "PokéWatch — Market Surveillance", desc: "Pipeline d'ingestion Pokémon TCG, stockage Supabase/Postgres, règles de détection PL/pgSQL, dashboard Next.js et rapports narratifs Groq LLM.", href: "https://pokewatch-three.vercel.app/", tag: "En cours" },
+      { title: "CryptoBot — Pipeline temps réel", desc: "Pipeline complet API vers ingestion vers stockage SQL vers visualisation. Données crypto en quasi temps réel, indicateurs de performance.", href: "https://www.canva.com/design/DAG1I0Dd_a4/p3QvJvqgTTjs9Dek5_j0Lw/edit", tag: "Livrable" },
     ],
   },
   {

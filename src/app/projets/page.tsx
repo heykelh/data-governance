@@ -100,6 +100,18 @@ const projects = [
   },
   {
     num: "09",
+    title: "PokéWatch — Surveillance marché Pokémon TCG",
+    subtitle: "Pipeline data + détection d'anomalies + rapports LLM",
+    description: "Surveillance automatisée du marché Pokémon TCG : ingestion Python depuis l'API officielle, stockage Supabase/Postgres, règles de détection PL/pgSQL, dashboard Next.js 15 et rapports narratifs générés par Groq LLM. CI GitHub Actions avec harness d'évaluation F1=1.00. Projet en cours.",
+    tags: ["Python", "Supabase", "Postgres", "PL/pgSQL", "Next.js 15", "Groq LLM", "GitHub Actions"],
+    href: "https://pokewatch-three.vercel.app/",
+    external: true,
+    color: "var(--accent-amber)",
+    year: "2026",
+    metier: "Data Engineering",
+  },
+  {
+    num: "10",
     title: "CryptoBot ,  Data Engineering",
     subtitle: "Pipeline data temps réel & visualisation",
     description: "Pipeline data complet API vers ingestion vers stockage SQL vers visualisation. Délai d'ingestion inférieur à 60 secondes. 5 KPI de performance calculés automatiquement (prix, volume, volatilité, tendance, momentum) et mis à jour en continu.",
