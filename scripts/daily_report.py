@@ -7,35 +7,61 @@ UMAMI_PASS = os.environ["UMAMI_PASS"]
 UMAMI_WEBSITE_ID = os.environ["UMAMI_WEBSITE_ID"]
 NTFY_TOPIC = os.environ["NTFY_TOPIC"]
 
+# Umami Cloud utilise cette URL
 BASE = "https://api.umami.is/v1"
 
-# Étape 1 — Login pour récupérer le token
-auth = requests.post(f"{BASE}/auth/login", json={
-    "username": UMAMI_USER,
-    "password": UMAMI_PASS
-})
-token = auth.json().get("token")
+print(f"Tentative de connexion sur {BASE}/auth/login")
+print(f"User: {UMAMI_USER}")
+
+auth_response = requests.post(
+    f"{BASE}/auth/login",
+    json={"username": UMAMI_USER, "password": UMAMI_PASS},
+    headers={"Content-Type": "application/json"}
+)
+
+print(f"Status code: {auth_response.status_code}")
+print(f"Réponse: {auth_response.text[:300]}")
+
+if auth_response.status_code != 200:
+    print("Échec auth — on essaie l'URL alternative")
+    BASE2 = "https://app.umami.is/api"
+    auth_response = requests.post(
+        f"{BASE2}/auth/login",
+        json={"username": UMAMI_USER, "password": UMAMI_PASS},
+        headers={"Content-Type": "application/json"}
+    )
+    print(f"Status code alt: {auth_response.status_code}")
+    print(f"Réponse alt: {auth_response.text[:300]}")
+    if auth_response.status_code == 200:
+        BASE = BASE2
+
+token = auth_response.json().get("token")
 
 if not token:
     print("Erreur auth Umami — vérifier les credentials")
     exit(1)
 
+print("Auth OK — token récupéré")
+
 headers = {"Authorization": f"Bearer {token}"}
 
-# Fenêtre temporelle : hier
 now = datetime.utcnow()
 end = int(now.replace(hour=0, minute=0, second=0, microsecond=0).timestamp() * 1000)
 start = end - 86400000
 
 def get(path, params={}):
-    r = requests.get(f"{BASE}{path}", headers=headers, params=params)
+    url = f"{BASE}{path}"
+    r = requests.get(url, headers=headers, params=params)
+    print(f"GET {url} → {r.status_code}")
+    if not r.ok:
+        print(f"  Erreur: {r.text[:200]}")
     return r.json() if r.ok else {}
 
-# Stats générales
 stats = get(f"/websites/{UMAMI_WEBSITE_ID}/stats", {
     "startAt": start,
     "endAt": end
 })
+print(f"Stats: {stats}")
 
 visits   = stats.get("visits", {}).get("value", 0)
 pviews   = stats.get("pageviews", {}).get("value", 0)
@@ -44,25 +70,21 @@ duration = stats.get("totalTime", {}).get("value", 0)
 avg_dur  = f"{int(duration // 60)}m{int(duration % 60)}s" if visits > 0 else "0s"
 bounce_r = f"{round((bounce / visits) * 100)}%" if visits > 0 else "0%"
 
-# Pages les plus vues
 pages_r = get(f"/websites/{UMAMI_WEBSITE_ID}/metrics", {
     "startAt": start, "endAt": end, "type": "url", "limit": 5
 })
 top_pages = pages_r if isinstance(pages_r, list) else []
 
-# Pays
 countries_r = get(f"/websites/{UMAMI_WEBSITE_ID}/metrics", {
     "startAt": start, "endAt": end, "type": "country", "limit": 3
 })
 top_countries = countries_r if isinstance(countries_r, list) else []
 
-# Sources
 sources_r = get(f"/websites/{UMAMI_WEBSITE_ID}/metrics", {
     "startAt": start, "endAt": end, "type": "referrer", "limit": 3
 })
 top_sources = sources_r if isinstance(sources_r, list) else []
 
-# Message
 date_str = (now - timedelta(days=1)).strftime("%d/%m/%Y")
 lines = [
     f"📊 Rapport Analytics — {date_str}",
@@ -93,7 +115,6 @@ if top_sources:
 
 message = "\n".join(lines)
 
-# Envoi ntfy
 requests.post(
     f"https://ntfy.sh/{NTFY_TOPIC}",
     data=message.encode("utf-8"),
