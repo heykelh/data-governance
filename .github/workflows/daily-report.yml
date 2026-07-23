@@ -1,0 +1,21 @@
+name: Daily Analytics Report
+on:
+  schedule:
+    - cron: '0 7 * * *'  # 7h00 UTC = 8h00 heure française
+  workflow_dispatch:       # permet de lancer manuellement aussi
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - run: python scripts/daily_report.py
+        env:
+          UMAMI_USER: ${{ secrets.UMAMI_USER }}
+          UMAMI_PASS: ${{ secrets.UMAMI_PASS }}
+          UMAMI_WEBSITE_ID: ${{ secrets.UMAMI_WEBSITE_ID }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
