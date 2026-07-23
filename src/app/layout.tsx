@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Heykel Hachiche ,  Data Governance & AI Compliance",
@@ -26,11 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <Script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="0fdb958a-6b07-4991-9949-cd535e6b44a1"
-        />
+        <Analytics />
       </body>
     </html>
   );
