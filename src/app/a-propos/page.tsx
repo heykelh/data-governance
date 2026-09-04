@@ -35,6 +35,8 @@ const projets = [
   { title: "Customer Experience Intelligence", href: "https://github.com/heykelh/customer-experience-intelligence", tag: "GitHub", color: "var(--accent-coral)" },
   { title: "Programme Gouvernance Données Critiques", href: "https://www.canva.com/design/DAHBNgAQtnw/Ru9E56mpd2qyDSzXKGhMIw/view", tag: "Livrable", color: "var(--accent)" },
   { title: "CryptoBot ,  Pipeline temps réel", href: "https://www.canva.com/design/DAG1I0Dd_a4/p3QvJvqgTTjs9Dek5_j0Lw/edit", tag: "Livrable", color: "var(--accent-amber)" },
+  { title: "PALIER — Revenue Management SNCF", href: "https://palier-sncf.vercel.app/", tag: "Live", color: "var(--accent-coral)" },
+  { title: "ESCALE — Supervision opérations aériennes", href: "https://escale-ops.vercel.app/", tag: "Live", color: "var(--accent-blue)" },
 ];
 
 const formations = [

@@ -137,8 +137,8 @@ const metiers = [
   {
     id: "data-analyst",
     num: "04",
-    title: "Data Analyst",
-    tagline: "Transformer la donnée brute en insight actionnable.",
+    title: "Data Analyst/Business Analyst",
+    tagline: "Transformer la donnée brute en insight actionnable et en aide à la décision.",
     color: "var(--accent-coral)",
     colorHex: "#fb923c",
     resume: "Analyse exploratoire, identification d'insights et d'anomalies, conception de dashboards interactifs et mise en place de KPI de pilotage métier. Restitution claire et pédagogique à destination des décideurs : du chiffre à la recommandation business.",
@@ -146,7 +146,9 @@ const metiers = [
     skills: ["Power BI", "SQL", "Python (pandas, matplotlib)", "scikit-learn (ML)", "Analyse exploratoire", "KPI et dashboarding", "Visualisation de données", "Restitution stratégique"],
     reglementaire: [],
     projets: [
-      { title: "Finance Audit Dashboard ,  CAC40", desc: "Détection automatique d'anomalies financières sur 10 entreprises du CAC40 via ML (Isolation Forest). Pipeline Python, API FastAPI, dashboard Plotly interactif.", href: "https://finance-audit-dashboard.vercel.app/", tag: "Live" },
+      { title: "PALIER — Revenue Management SNCF", desc: "Outil d'aide à la décision tarifaire sur 36 000 lignes de prix TGV réels. Exploration de grille, analyse INOUI vs OUIGO, simulation d'optimisation de revenu par élasticité-prix.", href: "https://palier-sncf.vercel.app/", tag: "Live" },
+      { title: "ESCALE — Supervision opérations aériennes", desc: "Console de suivi des vols CDG/Orly avec scoring de risque de retard déterministe, architecture médaillon Supabase, registres RGPD et AI Act intégrés.", href: "https://escale-ops.vercel.app/", tag: "Live" },
+      { title: "Finance Audit Dashboard — CAC40", desc: "Détection automatique d'anomalies financières sur 10 entreprises du CAC40 via ML (Isolation Forest). Pipeline Python, API FastAPI, dashboard Plotly interactif.", href: "https://finance-audit-dashboard.vercel.app/", tag: "Live" },
       { title: "Customer Experience Intelligence", desc: "Analyse de données clients, identification de tendances et anomalies, dashboards Power BI interactifs et KPI de pilotage de la performance.", href: "https://github.com/heykelh/customer-experience-intelligence", tag: "GitHub" },
     ],
   },

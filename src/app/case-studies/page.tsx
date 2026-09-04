@@ -101,9 +101,59 @@ const cases = [
     stack: ["Data Catalog", "Data Stewardship", "DAMA-DMBOK", "Data Quality", "Open Data SNCF"],
     href: "https://naomi-data-steward.vercel.app/",
   },
+    {
+    id: "palier",
+    num: "06",
+    metier: "Data Analyst/BA",
+    metierColor: "var(--accent-coral)",
+    title: "PALIER — Revenue Management & Pricing SNCF",
+    context: "La base de prix officielle SNCF (TGV INOUI et OUIGO) contient plus de 36 000 lignes de tarifs réels. Les équipes pricing n'ont pas d'outil pour explorer cette grille, analyser le positionnement concurrentiel entre les deux offres, ou simuler l'impact d'un changement de prix sur le revenu. La décision tarifaire se prend sans visibilité consolidée sur la donnée réelle.",
+    mission: "Transformer la base de prix ouverte SNCF en outil d'aide à la décision tarifaire opérationnel : exploration de la grille par trajet/classe/profil, analyse concurrentielle INOUI vs OUIGO, et moteur de simulation du prix optimal selon l'élasticité-prix. Données réelles, snapshot quotidien automatisé, démonstrateur complet de la chaîne de raisonnement du revenue management.",
+    objectifs: [
+      { metric: "36 000+", label: "lignes de prix réels analysées", detail: "base de prix officielle SNCF via API Opendatasoft, licence ODbL — zéro donnée simulée" },
+      { metric: "3 modules", label: "de décision couverts", detail: "exploration tarifaire, analyse concurrentielle INOUI/OUIGO, simulation élasticité-prix" },
+      { metric: "Quotidien", label: "snapshot automatique", detail: "GitHub Actions — fare tracking automatisé sur la grille complète chaque jour" },
+      { metric: "100%", label: "moteur déterministe", detail: "calcul d'optimisation transparent et relisible — prix optimal = f(élasticité, demande, revenu cible)" },
+    ],
+    livrables: [
+      "Pipeline d'ingestion Python/pandas/DuckDB depuis API Opendatasoft",
+      "Moteur d'optimisation tarifaire déterministe (élasticité → prix optimal → impact revenu)",
+      "Dashboard Next.js 15 avec Recharts — exploration grille, comparaison, simulation",
+      "Rapport Power BI avec mesures DAX et paramètre what-if élasticité",
+      "GitHub Actions — snapshot quotidien et fare tracking automatisé",
+    ],
+    stack: ["Python", "pandas", "DuckDB", "API Opendatasoft", "Next.js 15", "React 19", "TypeScript", "Recharts", "Tailwind CSS 4", "Power BI", "GitHub Actions"],
+    href: "https://palier-sncf.vercel.app/",
+  },
+  {
+    id: "escale",
+    num: "07",
+    metier: "Data Analyst/BA",
+    metierColor: "var(--accent-blue)",
+    title: "ESCALE — Console de supervision opérations aériennes",
+    context: "Un aéroport comme Roissy-CDG ou Orly gère des milliers de mouvements par jour. L'information sur les retards est dispersée entre plusieurs sources, difficile à exploiter en continu, et les équipes opérationnelles n'ont pas de vue consolidée permettant d'anticiper les risques. Par ailleurs, tout système de scoring automatisé doit être accompagné de sa documentation réglementaire (RGPD, AI Act).",
+    mission: "Concevoir une console de supervision complète : collecte des données de vol via API AeroDataBox, architecture médaillon Supabase, scoring déterministe du risque de retard, alertes en temps réel, et documentation réglementaire intégrée (registre RGPD, registre AI Act). Architecture privacy-by-design et scoring entièrement relisible.",
+    objectifs: [
+      { metric: "3 couches", label: "architecture médaillon", detail: "bronze / argent / or — données brutes vers données certifiées prêtes à l'analyse" },
+      { metric: "100%", label: "scoring déterministe", detail: "congestion, créneau horaire, propension liaison — zéro boîte noire, défendable en entretien" },
+      { metric: "Temps réel", label: "alertes ntfy.sh", detail: "contrôles automatiques de complétude, fraîcheur et valeurs aberrantes avec notification immédiate" },
+      { metric: "2 registres", label: "réglementaires intégrés", detail: "registre des traitements RGPD + registre AI Act (classification et traçabilité des usages)" },
+    ],
+    livrables: [
+      "Pipeline de collecte Python via API AeroDataBox avec GitHub Actions",
+      "Architecture médaillon PostgreSQL/Supabase (bronze/argent/or)",
+      "Moteur de scoring déterministe du risque de retard avec harnais de tests",
+      "Console Next.js 15 — suivi On-Time Performance, tableau de bord des vols",
+      "Système d'alertes ntfy.sh sur anomalies qualité des données",
+      "Registre des traitements RGPD et AIPD",
+      "Registre AI Act — classification du système et traçabilité des usages",
+    ],
+    stack: ["Python", "AeroDataBox API", "Supabase", "PostgreSQL", "Next.js 15", "TypeScript", "GitHub Actions", "ntfy.sh", "RGPD", "EU AI Act"],
+    href: "https://escale-ops.vercel.app/",
+  },
   {
     id: "finance-audit",
-    num: "06",
+    num: "08",
     metier: "Data Analyst",
     metierColor: "var(--accent-coral)",
     title: "Finance Audit Dashboard ,  Détection d'anomalies CAC40",
@@ -121,7 +171,7 @@ const cases = [
   },
   {
     id: "customer-experience",
-    num: "07",
+    num: "09",
     metier: "Data Analyst",
     metierColor: "var(--accent-coral)",
     title: "Customer Experience Intelligence",
@@ -139,7 +189,7 @@ const cases = [
   },
   {
     id: "kuala-lumpur",
-    num: "08",
+    num: "10",
     metier: "IA & Agents",
     metierColor: "var(--accent-rose)",
     title: "AI for Kuala Lumpur ,  Plateforme Data & IA Urbaine",
@@ -157,7 +207,7 @@ const cases = [
   },
   {
     id: "pokewatch",
-    num: "09",
+    num: "11",
     metier: "Data Engineering",
     metierColor: "var(--accent-amber)",
     title: "PokéWatch — Surveillance marché Pokémon TCG",
@@ -182,7 +232,7 @@ const cases = [
   },
   {
     id: "cryptobot",
-    num: "10",
+    num: "12",
     metier: "Data Engineering",
     metierColor: "var(--accent-amber)",
     title: "CryptoBot ,  Pipeline Data Temps Réel",
@@ -206,6 +256,7 @@ const metierColors: Record<string, string> = {
   "Data Governance": "var(--accent)",
   "Data Steward": "var(--accent-purple)",
   "Data Analyst": "var(--accent-coral)",
+  "Data Analyst/BA": "var(--accent-coral)",
   "Data Engineering": "var(--accent-amber)",
 };
 
@@ -216,7 +267,7 @@ export default function CaseStudiesPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 12 }}>Case Studies</p>
           <h1 style={{ fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 800, marginBottom: 16 }}>
-            9 projets réels.<br />
+            plus d'une dizaine de projets réels.<br />
             <span style={{ color: "var(--text-secondary)" }}>Des problèmes concrets. Des résultats chiffrés.</span>
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: 16, maxWidth: 640, lineHeight: 1.7 }}>
