@@ -165,7 +165,7 @@ export default function ProjetsPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 12 }}>Portfolio</p>
           <h1 style={{ fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 800, marginBottom: 16 }}>
-            9 projets réalisés
+            Plus de 10 projets réalisés
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: 16, maxWidth: 600, lineHeight: 1.7 }}>
             Data Governance, Data Consulting, Data Engineering, Data Analyst, IA & Agents. Chaque projet répond à un enjeu business réel avec des livrables opérationnels.

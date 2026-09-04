@@ -267,7 +267,7 @@ export default function CaseStudiesPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 12 }}>Case Studies</p>
           <h1 style={{ fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 800, marginBottom: 16 }}>
-            plus d'une dizaine de projets réels.<br />
+            Plus d'une dizaine de projets réels.<br />
             <span style={{ color: "var(--text-secondary)" }}>Des problèmes concrets. Des résultats chiffrés.</span>
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: 16, maxWidth: 640, lineHeight: 1.7 }}>
