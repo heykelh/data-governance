@@ -129,6 +129,7 @@ const metiers = [
     skills: ["Python", "SQL", "ETL / Pipelines", "APIs et ingestion", "Docker", "FastAPI", "Snowflake", "DBT", "Architecture Data"],
     reglementaire: [],
     projets: [
+      { title: "Data Arcade — Mini-jeux data & gouvernance", desc: "Site de mini-jeux rétro (NES/8-bit) : Data Steward, SQL Fighter, Pipe Plumber, Data Odyssey. Vitrine interactive de l'expertise data sous forme de jeux jouables.", href: "https://datarcade.vercel.app/", tag: "Live" },
       { title: "AI for Kuala Lumpur", desc: "Plateforme data multi-sources (API, open data), pipeline automatisé, cas d'usage IA urbains pour la prise de décision stratégique.", href: "https://ai-for-kuala-lumpur.netlify.app/", tag: "Live" },
       { title: "PokéWatch — Market Surveillance", desc: "Pipeline d'ingestion Pokémon TCG, stockage Supabase/Postgres, règles de détection PL/pgSQL, dashboard Next.js et rapports narratifs Groq LLM.", href: "https://pokewatch-three.vercel.app/", tag: "En cours" },
       { title: "CryptoBot — Pipeline temps réel", desc: "Pipeline complet API vers ingestion vers stockage SQL vers visualisation. Données crypto en quasi temps réel, indicateurs de performance.", href: "https://www.canva.com/design/DAG1I0Dd_a4/p3QvJvqgTTjs9Dek5_j0Lw/edit", tag: "Livrable" },
@@ -146,8 +147,10 @@ const metiers = [
     skills: ["Power BI", "SQL", "Python (pandas, matplotlib)", "scikit-learn (ML)", "Analyse exploratoire", "KPI et dashboarding", "Visualisation de données", "Restitution stratégique"],
     reglementaire: [],
     projets: [
-      { title: "PALIER — Revenue Management SNCF", desc: "Outil d'aide à la décision tarifaire sur 36 000 lignes de prix TGV réels. Exploration de grille, analyse INOUI vs OUIGO, simulation d'optimisation de revenu par élasticité-prix.", href: "https://palier-sncf.vercel.app/", tag: "Live" },
-      { title: "ESCALE — Supervision opérations aériennes", desc: "Console de suivi des vols CDG/Orly avec scoring de risque de retard déterministe, architecture médaillon Supabase, registres RGPD et AI Act intégrés.", href: "https://escale-ops.vercel.app/", tag: "Live" },
+      { title: "INSPECTION DATA — Audit banque fictive NOVEO", desc: "Simulation d'inspection data sur une banque fictive : moteur de contrôles SQL, scoring de risque, architecture médaillon. Déterministe, auditable, F1=1.00.", href: "https://inspection-data.vercel.app/", tag: "Live" },
+      { title: "Mission BA SI Crédit — CASDEN/BPCE", desc: "Simulation complète d'une mission Business Analyst sur un SI Crédit bancaire : recueil des besoins, spécifications fonctionnelles, cas d'usage, maquettes.", href: "https://mission-ba-credit.vercel.app/", tag: "Live" },
+      { title: "PALIER — Revenue Management SNCF", desc: "Outil d'aide à la décision tarifaire sur 36 000 lignes de prix TGV réels. Exploration grille, analyse INOUI vs OUIGO, simulation élasticité-prix.", href: "https://palier-sncf.vercel.app/", tag: "Live" },
+      { title: "ESCALE — Supervision opérations aériennes", desc: "Console de suivi des vols CDG/Orly avec scoring de risque de retard déterministe, registres RGPD et AI Act intégrés.", href: "https://escale-ops.vercel.app/", tag: "Live" },
       { title: "Finance Audit Dashboard — CAC40", desc: "Détection automatique d'anomalies financières sur 10 entreprises du CAC40 via ML (Isolation Forest). Pipeline Python, API FastAPI, dashboard Plotly interactif.", href: "https://finance-audit-dashboard.vercel.app/", tag: "Live" },
       { title: "Customer Experience Intelligence", desc: "Analyse de données clients, identification de tendances et anomalies, dashboards Power BI interactifs et KPI de pilotage de la performance.", href: "https://github.com/heykelh/customer-experience-intelligence", tag: "GitHub" },
     ],
