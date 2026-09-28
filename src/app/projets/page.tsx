@@ -1,260 +1,333 @@
 "use client";
-import Link from "next/link";
+import { useState } from "react";
+
+const categories = [
+  { id: "all", label: "Tous", color: "var(--text-primary)" },
+  { id: "Data Governance", label: "Data Governance", color: "var(--accent)" },
+  { id: "Data Consulting", label: "Data Consulting", color: "var(--accent-purple)" },
+  { id: "Data Analyst / BA", label: "Data Analyst / BA", color: "var(--accent-coral)" },
+  { id: "Data Engineering", label: "Data Engineering", color: "var(--accent-amber)" },
+  { id: "IA & Agents", label: "IA & Agents", color: "var(--accent-rose)" },
+];
 
 const projects = [
   {
-    num: "01",
-    title: "REGARD ,  Copilote IA de conformité",
-    subtitle: "Agent IA branchée sur la donnée régulée réelle",
-    description: "Système IA agentique de conformité : pipeline RAG déterministe-first, orchestration LangGraph, multi-LLM (Groq Llama 3.3 70B + Gemini 2.0 Flash), autocontrôle LLM-juge, refus motivés avec journal d'audit, observabilité Langfuse. 28/28 cas de test validés. Architecture donnée brute vers gold vers réponse gouvernée.",
-    tags: ["LangGraph", "RAG", "Groq", "Gemini", "LLMOps", "Langfuse", "Next.js", "DuckDB-WASM"],
+    title: "REGARD",
+    subtitle: "Copilote IA de conformité réglementaire",
+    desc: "Agent IA de conformité sur données régulées réelles. Architecture déterministe-first, 28/28 cas validés, refus motivés, journal d'audit, observabilité Langfuse.",
+    tags: ["LangGraph", "RAG", "Groq", "Gemini", "Langfuse"],
     href: "https://regard-wine.vercel.app/",
-    external: true,
     color: "var(--accent-rose)",
-    year: "2026",
     metier: "IA & Agents",
-  },
-  {
-    num: "02",
-    title: "Audit & Gouvernance Data ,  Cadre BCBS239",
-    subtitle: "Diagnostic du dispositif data orienté pilotage financier",
-    description: "Diagnostic complet du dispositif data avec approche orientée pilotage financier et performance métier. Analyse des écarts de gouvernance et de conformité, structuration du cadre data : data lineage, définition des rôles (Data Owner / Steward) et mise en place de contrôles. 0% à 100% conformité BCBS239.",
-    tags: ["BCBS239", "Data Governance", "Data Lineage", "Conformité"],
-    href: "https://bcbs239-data-governance.vercel.app/",
-    external: true,
-    color: "var(--accent)",
     year: "2026",
-    metier: "Data Governance",
   },
   {
-    num: "03",
-    title: "FrontierBank ,  Mission Consulting Data",
-    subtitle: "Simulation complète d'une mission de conseil 12 mois",
-    description: "Pilotage complet d'un programme de transformation data en contexte BCE / BCBS239 : diagnostic DAMA-DMBOK (8 domaines), cadre de gouvernance, data catalog avec glossaire certifié, data quality KPI, data lineage graphe, AI governance EU AI Act, rapport Comex avec budget et ROI.",
-    tags: ["BCBS239", "DAMA-DMBOK", "Data Catalog", "EU AI Act", "Comex"],
+    title: "FrontierBank",
+    subtitle: "Mission Consulting Data Governance",
+    desc: "Pilotage complet d'un programme de transformation data sur 12 mois en contexte BCE/BCBS239. Diagnostic DAMA-DMBOK, data catalog, data quality, data lineage, AI Register, rapport Comex.",
+    tags: ["BCBS239", "DAMA-DMBOK", "Data Catalog", "EU AI Act"],
     href: "https://frontierbank-data.vercel.app/",
-    external: true,
     color: "var(--accent-purple)",
-    year: "2026",
     metier: "Data Consulting",
-  },
-    {
-    num: "04",
-    title: "INSPECTION DATA — Audit données banque fictive NOVEO",
-    subtitle: "Moteur de contrôles SQL, scoring risque, architecture médaillon",
-    description: "Simulation d'une inspection data complète sur la banque fictive NOVEO : moteur de contrôles SQL déterministe, scoring de risque par domaine, architecture médaillon (bronze/argent/or), harnais de tests F1=1.00. Zéro boîte noire — chaque contrôle est relisible, justifiable et défendable en audit.",
-    tags: ["SQL", "PostgreSQL", "Architecture médaillon", "Scoring risque", "Audit data", "Déterministe"],
-    href: "https://inspection-data.vercel.app/",
-    external: true,
-    color: "var(--accent-coral)",
     year: "2026",
-    metier: "Data Analyst / BA",
   },
   {
-    num: "05",
-    title: "Mission BA SI Crédit — CASDEN / Groupe BPCE",
-    subtitle: "Simulation complète d'une mission Business Analyst bancaire",
-    description: "Simulation d'une mission Business Analyst sur un SI Crédit bancaire ciblée CASDEN/BPCE : recueil et formalisation des besoins métiers, rédaction des spécifications fonctionnelles détaillées, modélisation des cas d'usage, maquettes d'interfaces et plan de recette. Démonstrateur complet de la chaîne BA de bout en bout.",
-    tags: ["Business Analysis", "Spécifications fonctionnelles", "Cas d'usage", "Maquettes", "SI Crédit", "Bancaire"],
-    href: "https://mission-ba-credit.vercel.app/",
-    external: true,
-    color: "var(--accent-blue)",
-    year: "2026",
-    metier: "Data Analyst / BA",
-  },
-  {
-    num: "06",
-    title: "Data Arcade — Mini-jeux data & gouvernance",
-    subtitle: "Vitrine interactive rétro NES/8-bit autour de l'expertise data",
-    description: "Site de mini-jeux rétro pensé comme vitrine portfolio : Data Steward (tri de fiches conformes/non conformes avec boss RGPD), SQL Fighter (combat tour par tour, la bonne clause SQL terrasse chaque menace), Pipe Plumber (rotation de tuyaux, niveaux aléatoires), Data Odyssey (carte-monde, mini-défis par métier data). Stack Next.js, TypeScript, Tailwind, bilingue FR/EN.",
-    tags: ["Next.js", "TypeScript", "Tailwind", "Jeux rétro", "Data Steward", "SQL", "Personal Brand"],
-    href: "https://datarcade.vercel.app/",
-    external: true,
-    color: "var(--accent-amber)",
-    year: "2026",
-    metier: "Data Engineering",
-  },
-  {
-    num: "07",
-    title: "PALIER — Revenue Management & Pricing SNCF",
-    subtitle: "Aide à la décision tarifaire sur données TGV réelles",
-    description: "Transforme la base de prix officielle SNCF (36 000 lignes, TGV INOUI et OUIGO) en outil de revenue management opérationnel : exploration de la grille tarifaire par trajet/classe/profil, analyse du positionnement concurrentiel INOUI vs OUIGO, et simulation du prix optimal selon l'élasticité-prix. Données réelles via API Opendatasoft (licence ODbL), snapshot quotidien GitHub Actions.",
-    tags: ["Python", "pandas", "DuckDB", "Next.js 15", "TypeScript", "Recharts", "Power BI", "GitHub Actions"],
-    href: "https://palier-sncf.vercel.app/",
-    external: true,
-    color: "var(--accent-coral)",
-    year: "2026",
-    metier: "Data Analyst/BA",
-  },
-  {
-    num: "08",
-    title: "ESCALE — Console de supervision opérations aériennes",
-    subtitle: "Suivi de performance et scoring de retard — CDG & Orly",
-    description: "Plateforme de supervision des opérations aériennes pour Roissy-CDG et Orly : collecte via API AeroDataBox, architecture médaillon PostgreSQL/Supabase (bronze/argent/or), scoring déterministe du risque de retard (congestion, créneau, propension liaison), alertes ntfy.sh, registre RGPD et registre AI Act intégrés. Privacy-by-design et scoring relisible — zéro boîte noire.",
-    tags: ["Python", "AeroDataBox API", "Supabase", "PostgreSQL", "Next.js 15", "TypeScript", "GitHub Actions", "ntfy.sh"],
-    href: "https://escale-ops.vercel.app/",
-    external: true,
-    color: "var(--accent-blue)",
-    year: "2026",
-    metier: "Data Analyst/BA",
-  },
-  {
-    num: "09",
-    title: "Finance Audit Dashboard ,  CAC40",
-    subtitle: "Détection automatique d'anomalies financières par ML",
-    description: "Analyse automatisée de 10 entreprises du CAC40 sur 5 ans de données réelles Yahoo Finance. Pipeline ETL Python, modèle ML Isolation Forest (scoring 0-100), API FastAPI 4 endpoints, dashboard Next.js avec graphiques Plotly interactifs. De plusieurs semaines d'analyse manuelle à 10 secondes.",
-    tags: ["Python", "scikit-learn", "FastAPI", "Next.js", "Plotly", "yfinance"],
-    href: "https://finance-audit-dashboard.vercel.app/",
-    external: true,
-    color: "var(--accent-coral)",
-    year: "2026",
-    metier: "Data Analyst",
-  },
-  {
-    num: "10",
-    title: "Customer Experience Intelligence",
-    subtitle: "Analyse & Data Visualisation",
-    description: "Analyse de données clients pour identifier insights, tendances et anomalies impactant la performance. Conception de dashboards interactifs Power BI et mise en place de KPI pour le pilotage métier. 5 KPI automatisés, 3 segments clients identifiés, délai de rapport réduit à moins d'une journée.",
-    tags: ["Power BI", "Data Analysis", "KPI", "Dashboard"],
-    href: "https://github.com/heykelh/customer-experience-intelligence",
-    external: true,
-    color: "var(--accent-amber)",
-    year: "2026",
-    metier: "Data Analyst",
-  },
-  {
-    num: "11",
-    title: "Programme de Gouvernance des Données Critiques",
-    subtitle: "Framework complet sur un périmètre incidents & performance",
-    description: "Conception et déploiement d'un cadre de gouvernance Data complet. Diagnostic de maturité Data & IA, modèle de gouvernance fédéré, formalisation des rôles Data avec matrice RACI, cadre Data Quality (KPI, SLA, contrôles), processus de gestion des incidents Data et feuille de route priorisée sur 18 mois.",
-    tags: ["Data Governance", "RACI", "Data Quality", "Roadmap", "Maturité"],
-    href: "https://www.canva.com/design/DAHBNgAQtnw/Ru9E56mpd2qyDSzXKGhMIw/view",
-    external: true,
+    title: "BCBS239 Audit",
+    subtitle: "Audit et Gouvernance Data",
+    desc: "Diagnostic complet du dispositif data BCBS239 : 0% à 100% de conformité sur les 14 principes, data lineage, rôles Data Owner/Steward, cadre de contrôle qualité.",
+    tags: ["BCBS239", "Data Lineage", "Data Quality", "RACI"],
+    href: "https://bcbs239-data-governance.vercel.app/",
     color: "var(--accent)",
-    year: "2026",
     metier: "Data Governance",
+    year: "2026",
   },
   {
-    num: "12",
+    title: "Gouvernance Données Critiques",
+    subtitle: "Programme de Gouvernance",
+    desc: "Cadre de gouvernance data complet sur périmètre critique : diagnostic maturité, RACI, Data Quality KPI/SLA, gestion des incidents, feuille de route 18 mois.",
+    tags: ["DAMA-DMBOK", "Data Quality", "RACI", "Roadmap"],
+    href: "https://www.canva.com/design/DAHBNgAQtnw/Ru9E56mpd2qyDSzXKGhMIw/view",
+    color: "var(--accent)",
+    metier: "Data Governance",
+    year: "2026",
+  },
+  {
+    title: "INSPECTION DATA",
+    subtitle: "Audit données banque fictive NOVEO",
+    desc: "Moteur d'inspection data déterministe sur la banque fictive NOVEO : contrôles SQL, scoring risque par domaine, architecture médaillon, harnais de tests F1=1.00.",
+    tags: ["SQL", "PostgreSQL", "Architecture médaillon", "Scoring risque"],
+    href: "https://inspection-data.vercel.app/",
+    color: "var(--accent-coral)",
+    metier: "Data Analyst / BA",
+    year: "2026",
+  },
+  {
+    title: "Mission BA SI Crédit",
+    subtitle: "CASDEN / Groupe BPCE",
+    desc: "Simulation complète d'une mission Business Analyst sur un SI Crédit bancaire : recueil besoins, spécifications fonctionnelles, cas d'usage, maquettes, plan de recette.",
+    tags: ["Business Analysis", "Spécifications fonctionnelles", "SI Crédit", "Bancaire"],
+    href: "https://mission-ba-credit.vercel.app/",
+    color: "var(--accent-blue)",
+    metier: "Data Analyst / BA",
+    year: "2026",
+  },
+  {
+    title: "PALIER",
+    subtitle: "Revenue Management & Pricing SNCF",
+    desc: "Outil d'aide à la décision tarifaire sur 36 000 lignes de prix TGV réels. Exploration grille, analyse INOUI vs OUIGO, simulation prix optimal par élasticité.",
+    tags: ["Python", "DuckDB", "Next.js 15", "Power BI", "GitHub Actions"],
+    href: "https://palier-sncf.vercel.app/",
+    color: "var(--accent-coral)",
+    metier: "Data Analyst / BA",
+    year: "2026",
+  },
+  {
+    title: "ESCALE",
+    subtitle: "Supervision opérations aériennes CDG/Orly",
+    desc: "Console de suivi des vols avec scoring de risque de retard déterministe, architecture médaillon Supabase, alertes ntfy.sh, registres RGPD et AI Act intégrés.",
+    tags: ["Python", "Supabase", "PostgreSQL", "Next.js 15", "RGPD", "AI Act"],
+    href: "https://escale-ops.vercel.app/",
+    color: "var(--accent-blue)",
+    metier: "Data Analyst / BA",
+    year: "2026",
+  },
+  {
+    title: "Finance Audit Dashboard",
+    subtitle: "Détection d'anomalies financières CAC40",
+    desc: "Détection automatique d'anomalies sur 10 entreprises du CAC40 via ML (Isolation Forest). Pipeline Python, API FastAPI, dashboard Plotly. De plusieurs semaines à 10 secondes.",
+    tags: ["Python", "scikit-learn", "FastAPI", "Next.js", "Plotly"],
+    href: "https://finance-audit-dashboard.vercel.app/",
+    color: "var(--accent-coral)",
+    metier: "Data Analyst / BA",
+    year: "2026",
+  },
+  {
+    title: "Customer Experience Intelligence",
+    subtitle: "Analyse et Data Visualisation",
+    desc: "Analyse de données clients, identification de tendances et anomalies. 5 KPI automatisés, 3 segments clients identifiés, délai de rapport réduit à moins d'une journée.",
+    tags: ["Power BI", "Python", "SQL", "KPI"],
+    href: "https://github.com/heykelh/customer-experience-intelligence",
+    color: "var(--accent-coral)",
+    metier: "Data Analyst / BA",
+    year: "2026",
+  },
+  {
     title: "Naomi Data Steward Lab",
-    subtitle: "Simulation du rôle Data Steward sur l'écosystème SNCF",
-    description: "Simulation pédagogique du rôle de Data Steward sur l'écosystème Naomi de SNCF Voyageurs. Données ouvertes réelles, catalogue de données avec fiches par dataset, glossaire métier, règles de qualité et processus de remédiation.",
-    tags: ["Data Stewardship", "Data Catalog", "DAMA-DMBOK", "Open Data SNCF"],
+    subtitle: "SNCF Voyageurs",
+    desc: "Simulation du rôle Data Steward sur l'écosystème Naomi SNCF : catalogue de données, glossaire métier, règles de qualité, processus de remédiation sur données ouvertes réelles.",
+    tags: ["Data Catalog", "Data Stewardship", "DAMA-DMBOK", "Open Data SNCF"],
     href: "https://naomi-data-steward.vercel.app/",
-    external: true,
     color: "var(--accent-purple)",
+    metier: "Data Governance",
     year: "2026",
-    metier: "Data Steward",
   },
   {
-    num: "13",
     title: "AI for Kuala Lumpur",
-    subtitle: "Data & IA Decision Platform ,  cas d'usage urbain",
-    description: "Plateforme data multi-sources permettant d'analyser des données urbaines complexes pour faciliter la prise de décision stratégique. Pipeline data automatisé, 3 cas d'usage IA implémentés, 100% données réelles, génération d'insights en moins de 5 minutes.",
-    tags: ["IA", "Data Platform", "API", "Pipeline", "Décision"],
+    subtitle: "Data et IA Decision Platform",
+    desc: "Plateforme data multi-sources pour l'analyse de données urbaines complexes. Pipeline automatisé, 3 cas d'usage IA implémentés, 100% données réelles, insights en moins de 5 min.",
+    tags: ["Python", "FastAPI", "APIs REST", "Next.js", "IA"],
     href: "https://ai-for-kuala-lumpur.netlify.app/",
-    external: true,
     color: "var(--accent-rose)",
-    year: "2026",
     metier: "IA & Agents",
-  },
-  {
-    num: "14",
-    title: "PokéWatch — Surveillance marché Pokémon TCG",
-    subtitle: "Pipeline data + détection d'anomalies + rapports LLM",
-    description: "Surveillance automatisée du marché Pokémon TCG : ingestion Python depuis l'API officielle, stockage Supabase/Postgres, règles de détection PL/pgSQL, dashboard Next.js 15 et rapports narratifs générés par Groq LLM. CI GitHub Actions avec harness d'évaluation F1=1.00. Projet en cours.",
-    tags: ["Python", "Supabase", "Postgres", "PL/pgSQL", "Next.js 15", "Groq LLM", "GitHub Actions"],
-    href: "https://pokewatch-three.vercel.app/",
-    external: true,
-    color: "var(--accent-amber)",
     year: "2026",
-    metier: "Data Engineering",
   },
   {
-    num: "15",
-    title: "CryptoBot ,  Data Engineering",
-    subtitle: "Pipeline data temps réel & visualisation",
-    description: "Pipeline data complet API vers ingestion vers stockage SQL vers visualisation. Délai d'ingestion inférieur à 60 secondes. 5 KPI de performance calculés automatiquement (prix, volume, volatilité, tendance, momentum) et mis à jour en continu.",
-    tags: ["ETL", "SQL", "API", "Pipeline", "Data Engineering"],
-    href: "https://www.canva.com/design/DAG1I0Dd_a4/p3QvJvqgTTjs9Dek5_j0Lw/edit",
-    external: true,
+    title: "Data Arcade",
+    subtitle: "Mini-jeux rétro data et gouvernance",
+    desc: "Vitrine interactive NES/8-bit : Data Steward, SQL Fighter, Pipe Plumber, Data Odyssey. Chaque jeu illustre un concept data ou gouvernance. Bilingue FR/EN.",
+    tags: ["Next.js 15", "TypeScript", "Tailwind", "Game Loop"],
+    href: "https://datarcade.vercel.app/",
     color: "var(--accent-amber)",
-    year: "2025",
     metier: "Data Engineering",
+    year: "2026",
+  },
+  {
+    title: "PokéWatch",
+    subtitle: "Market Surveillance Pokémon TCG",
+    desc: "Pipeline d'ingestion Pokémon TCG, stockage Supabase/Postgres, règles de détection PL/pgSQL, dashboard Next.js et rapports narratifs Groq LLM. CI GitHub Actions F1=1.00.",
+    tags: ["Python", "Supabase", "PL/pgSQL", "Groq LLM", "GitHub Actions"],
+    href: "https://pokewatch-three.vercel.app/",
+    color: "var(--accent-amber)",
+    metier: "Data Engineering",
+    year: "2026",
+  },
+  {
+    title: "CryptoBot",
+    subtitle: "Pipeline Data Temps Réel",
+    desc: "Pipeline data bout-en-bout API vers ingestion vers SQL vers visualisation. Délai d'ingestion inférieur à 60 secondes. 5 KPI calculés automatiquement en continu.",
+    tags: ["Python", "SQL", "API REST", "ETL", "Visualisation"],
+    href: "https://www.canva.com/design/DAG1I0Dd_a4/p3QvJvqgTTjs9Dek5_j0Lw/edit",
+    color: "var(--accent-amber)",
+    metier: "Data Engineering",
+    year: "2025",
   },
 ];
 
-const metierColors: Record<string, string> = {
-  "IA & Agents": "var(--accent-rose)",
-  "Data Governance": "var(--accent)",
-  "Data Consulting": "var(--accent-purple)",
-  "Data Analyst/BA": "var(--accent-coral)",
-  "Data Analyst": "var(--accent-coral)",
-  "Data Engineering": "var(--accent-amber)",
-  "Data Steward": "var(--accent-purple)",
-};
-
 export default function ProjetsPage() {
+  const [active, setActive] = useState("all");
+
+  const filtered = active === "all"
+    ? projects
+    : projects.filter(p => p.metier === active);
+
+  const activeCat = categories.find(c => c.id === active);
+
   return (
     <div style={{ paddingTop: 80 }}>
+
+      {/* Header */}
       <section style={{ padding: "60px 24px 48px", background: "var(--bg-surface)", borderBottom: "1px solid var(--border)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: "var(--text-tertiary)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 12 }}>Portfolio</p>
-          <h1 style={{ fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 800, marginBottom: 16 }}>
-            Plus de 10 projets réalisés
+          <h1 style={{ fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 800, marginBottom: 12 }}>
+            {projects.length} projets réalisés
           </h1>
-          <p style={{ color: "var(--text-secondary)", fontSize: 16, maxWidth: 600, lineHeight: 1.7 }}>
-            Data Governance, Data Consulting, Data Engineering, Data Analyst, IA & Agents. Chaque projet répond à un enjeu business réel avec des livrables opérationnels.
+          <p style={{ color: "var(--text-secondary)", fontSize: 15, maxWidth: 580, lineHeight: 1.7 }}>
+            Data Governance, Consulting, Analyse, Engineering, IA. Chaque projet répond à un enjeu business réel avec des livrables opérationnels et des résultats chiffrés.
           </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 20 }}>
-            {Object.entries(metierColors).map(([m, c]) => (
-              <span key={m} style={{ fontSize: 11, padding: "3px 10px", borderRadius: 99, fontWeight: 500, background: `color-mix(in srgb, ${c} 12%, transparent)`, color: c, border: `1px solid color-mix(in srgb, ${c} 25%, transparent)` }}>{m}</span>
-            ))}
-          </div>
         </div>
       </section>
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px", display: "flex", flexDirection: "column", gap: 16 }}>
-        {projects.map((p) => {
-          const mc = metierColors[p.metier] || "var(--accent)";
-          return (
-            <div key={p.num} style={{
-              background: "var(--bg-card)", border: "1px solid var(--border)",
-              borderRadius: 14, padding: "24px 28px",
-              borderLeft: `3px solid ${mc}`,
-            }}>
-              <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
-                <div style={{ flex: 1, minWidth: 260 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-                    <span style={{ width: 26, height: 26, borderRadius: 6, fontSize: 11, fontWeight: 700, background: `color-mix(in srgb, ${mc} 15%, transparent)`, color: mc, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-display)" }}>{p.num}</span>
-                    <span style={{ fontSize: 11, padding: "2px 8px", borderRadius: 99, background: `color-mix(in srgb, ${mc} 10%, transparent)`, color: mc, fontWeight: 500 }}>{p.metier}</span>
-                    <span style={{ fontSize: 11, color: "var(--text-tertiary)" }}>{p.year}</span>
-                  </div>
-                  <h2 style={{ fontSize: 17, fontWeight: 700, color: "var(--text-primary)", marginBottom: 4 }}>{p.title}</h2>
-                  <p style={{ fontSize: 13, color: mc, fontWeight: 500, marginBottom: 10 }}>{p.subtitle}</p>
-                  <p style={{ fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.65, marginBottom: 14, maxWidth: 680 }}>{p.description}</p>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-                    {p.tags.map(t => (
-                      <span key={t} style={{ fontSize: 11, padding: "2px 8px", borderRadius: 99, background: `color-mix(in srgb, ${mc} 8%, transparent)`, color: mc, fontWeight: 500 }}>{t}</span>
-                    ))}
-                  </div>
-                </div>
-                <a href={p.href} target="_blank" rel="noreferrer" style={{
-                  display: "inline-flex", alignItems: "center", gap: 6, flexShrink: 0,
-                  padding: "9px 16px", borderRadius: 8, fontSize: 12, fontWeight: 500,
-                  background: `color-mix(in srgb, ${mc} 10%, transparent)`,
-                  border: `1px solid color-mix(in srgb, ${mc} 25%, transparent)`,
-                  color: mc, textDecoration: "none",
+      {/* Filtres */}
+      <section style={{ padding: "24px 24px 0", background: "var(--bg-surface)", position: "sticky", top: 64, zIndex: 10, borderBottom: "1px solid var(--border)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", gap: 6, flexWrap: "wrap", paddingBottom: 0 }}>
+          {categories.map(cat => {
+            const isActive = active === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActive(cat.id)}
+                style={{
+                  padding: "8px 16px",
+                  borderRadius: 99,
+                  fontSize: 13,
+                  fontWeight: 500,
+                  cursor: "pointer",
+                  border: isActive
+                    ? `1px solid color-mix(in srgb, ${cat.color} 40%, transparent)`
+                    : "1px solid var(--border)",
+                  background: isActive
+                    ? `color-mix(in srgb, ${cat.color} 12%, transparent)`
+                    : "transparent",
+                  color: isActive ? cat.color : "var(--text-secondary)",
+                  fontFamily: "var(--font-body)",
+                  transition: "all 0.15s",
+                  marginBottom: 24,
+                }}
+              >
+                {cat.label}
+                <span style={{
+                  marginLeft: 7,
+                  fontSize: 11,
+                  padding: "1px 6px",
+                  borderRadius: 99,
+                  background: isActive
+                    ? `color-mix(in srgb, ${cat.color} 20%, transparent)`
+                    : "var(--bg-card)",
+                  color: isActive ? cat.color : "var(--text-tertiary)",
                 }}>
-                  Voir le projet
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  {cat.id === "all" ? projects.length : projects.filter(p => p.metier === cat.id).length}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Grille */}
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "40px 24px" }}>
+
+        {/* Compteur */}
+        <p style={{ fontSize: 13, color: "var(--text-tertiary)", marginBottom: 24 }}>
+          {filtered.length} projet{filtered.length > 1 ? "s" : ""}
+          {active !== "all" && (
+            <span style={{ color: activeCat?.color, fontWeight: 500 }}> · {active}</span>
+          )}
+        </p>
+
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",
+          gap: 14,
+        }}>
+          {filtered.map(p => (
+          <a  
+              key={p.title}
+              href={p.href}
+              target="_blank"
+              rel="noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              <div style={{
+                background: "var(--bg-card)",
+                border: "1px solid var(--border)",
+                borderRadius: 14,
+                padding: "22px 24px",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+                borderTop: `2px solid color-mix(in srgb, ${p.color} 50%, transparent)`,
+                transition: "border-color 0.15s, transform 0.15s",
+              }}
+              onMouseEnter={e => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.borderColor = p.color;
+                el.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={e => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.borderColor = "var(--border)";
+                el.style.transform = "translateY(0)";
+              }}>
+
+                {/* Top row */}
+                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 10 }}>
+                  <div>
+                    <span style={{
+                      fontSize: 10,
+                      padding: "2px 8px",
+                      borderRadius: 99,
+                      background: `color-mix(in srgb, ${p.color} 12%, transparent)`,
+                      color: p.color,
+                      fontWeight: 600,
+                      display: "inline-block",
+                      marginBottom: 8,
+                    }}>{p.metier}</span>
+                    <h2 style={{ fontSize: 16, fontWeight: 700, color: "var(--text-primary)", marginBottom: 2 }}>{p.title}</h2>
+                    <p style={{ fontSize: 12, color: p.color, fontWeight: 500 }}>{p.subtitle}</p>
+                  </div>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "var(--text-tertiary)", flexShrink: 0, marginTop: 2 }}>
+                    <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
-                </a>
+                </div>
+
+                {/* Desc */}
+                <p style={{ fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.6, margin: 0, flex: 1 }}>{p.desc}</p>
+
+                {/* Tags + year */}
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
+                    {p.tags.slice(0, 3).map(t => (
+                      <span key={t} style={{
+                        fontSize: 10,
+                        padding: "2px 7px",
+                        borderRadius: 99,
+                        background: "var(--bg-surface)",
+                        border: "1px solid var(--border)",
+                        color: "var(--text-tertiary)",
+                      }}>{t}</span>
+                    ))}
+                    {p.tags.length > 3 && (
+                      <span style={{ fontSize: 10, color: "var(--text-tertiary)", padding: "2px 4px" }}>+{p.tags.length - 3}</span>
+                    )}
+                  </div>
+                  <span style={{ fontSize: 11, color: "var(--text-tertiary)", flexShrink: 0 }}>{p.year}</span>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
