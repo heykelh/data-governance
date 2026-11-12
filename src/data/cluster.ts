@@ -136,10 +136,16 @@ export const CATEGORIES: ClusterCategory[] = [
     hex: "#f472b6",
     skills: ["LangGraph", "RAG", "Groq", "Gemini", "Langfuse", "Évaluation LLM"],
     projects: [
-      {
+            {
         title: "REGARD",
         desc: "Copilote IA de conformité bancaire : LangGraph, RAG, refus motivés, 28 cas de test validés.",
         href: "https://regard-wine.vercel.app/",
+        tag: "Live",
+      },
+      {
+        title: "CAP",
+        desc: "Équipe d'agents IA qui instruit des ouvertures de lignes aériennes, sur données BigQuery (GCP).",
+        href: "https://cap-network-copilot.vercel.app/",
         tag: "Live",
       },
       kualaLumpur,

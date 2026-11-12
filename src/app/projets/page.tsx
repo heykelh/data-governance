@@ -22,6 +22,16 @@ const projects = [
     year: "2026",
   },
   {
+    title: "CAP",
+    subtitle: "Copilote Network Planning aérien",
+    desc: "Équipe d'agents IA qui instruit des ouvertures de lignes aériennes. Données et traitements sur BigQuery (GCP), restitution web.",
+    tags: ["Agents IA", "BigQuery", "GCP", "Network Planning"],
+    href: "https://cap-network-copilot.vercel.app/",
+    color: "var(--accent-rose)",
+    metier: "IA & Agents",
+    year: "2026",
+  },
+  {
     title: "FrontierBank",
     subtitle: "Mission Consulting Data Governance",
     desc: "Pilotage complet d'un programme de transformation data sur 12 mois en contexte BCE/BCBS239. Diagnostic DAMA-DMBOK, data catalog, data quality, data lineage, AI Register, rapport Comex.",
