@@ -8,6 +8,7 @@ const categories = [
   { id: "Data Analyst / BA", label: "Data Analyst / BA", color: "var(--accent-coral)" },
   { id: "Data Engineering", label: "Data Engineering", color: "var(--accent-amber)" },
   { id: "IA & Agents", label: "IA & Agents", color: "var(--accent-rose)" },
+  { id: "Applications et autres", label: "Applications et autres", color: "var(--accent-blue)" },
 ];
 
 const projects = [
@@ -147,8 +148,28 @@ const projects = [
     desc: "Vitrine interactive NES/8-bit : Data Steward, SQL Fighter, Pipe Plumber, Data Odyssey. Chaque jeu illustre un concept data ou gouvernance. Bilingue FR/EN.",
     tags: ["Next.js 15", "TypeScript", "Tailwind", "Game Loop"],
     href: "https://datarcade.vercel.app/",
-    color: "var(--accent-amber)",
-    metier: "Data Engineering",
+    color: "var(--accent-blue)",
+    metier: "Applications et autres",
+    year: "2026",
+  },
+    {
+    title: "Spin the Stack",
+    subtitle: "Jeu rétro 8-bit sur le monde de la data",
+    desc: "Jeu rétro style NES à roues façon roue de la fortune : on construit ses roues de pipeline, on découvre des probabilités cachées et on gravit une carrière data jusqu'au niveau Chief. Humour sur le monde du travail, bilingue FR/EN.",
+    tags: ["Jeu rétro", "8-bit NES", "Data", "Bilingue FR/EN"],
+    href: "https://spin-the-stack.vercel.app/",
+    color: "var(--accent-blue)",
+    metier: "Applications et autres",
+    year: "2026",
+  },
+  {
+    title: "LAST SEAT",
+    subtitle: "Jeu rétro sur le revenue management",
+    desc: "Jeu rétro pixel bilingue FR/EN sur le revenue management, avec des roues à lancer.",
+    tags: ["Jeu rétro", "Pixel art", "Revenue Management", "Bilingue FR/EN"],
+    href: "https://last-seat-game.vercel.app/",
+    color: "var(--accent-blue)",
+    metier: "Applications et autres",
     year: "2026",
   },
   {

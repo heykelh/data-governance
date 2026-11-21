@@ -194,6 +194,18 @@ export const CATEGORIES: ClusterCategory[] = [
         href: "https://datarcade.vercel.app/",
         tag: "Live",
       },
+            {
+        title: "Spin the Stack",
+        desc: "Jeu rétro 8-bit à roues : pipelines à construire, probabilités cachées, carrière data jusqu'au niveau Chief.",
+        href: "https://spin-the-stack.vercel.app/",
+        tag: "Live",
+      },
+      {
+        title: "LAST SEAT",
+        desc: "Jeu rétro pixel bilingue FR/EN sur le revenue management, avec des roues à lancer.",
+        href: "https://last-seat-game.vercel.app/",
+        tag: "Live",
+      },
       {
         title: "Ce portfolio",
         desc: "Next.js, TypeScript et analytics Vercel : le site que vous parcourez.",
